@@ -1,6 +1,6 @@
 # FamilyKit — Cursor Project Rules
 
-Version 1.1 · 8 November 2026.
+Version 1.2 · 8 November 2026.
 
 Treat `.cursor/architecture/FAMILYKIT_MASTER_ARCHITECTURE.md` as the readable architecture reference and `PROJECT_CONTEXT.md` as the record of founder approvals and Pending Approval decisions.
 
@@ -39,6 +39,19 @@ One unified FamilyKit AI layer serves all systems.
 - Optional expiring shares are supported.
 - Owner-leaves and deceased-owner succession is Pending Approval.
 
+## Bill Payments & Account Aggregator
+
+Bill Payments & Account Aggregator (**key differentiator**, V1.5). Families pay many mobiles, DTH, FASTag, insurance premiums and utilities across separate company apps; FamilyKit lets them do it from one place.
+
+- **Bill payments via BBPS** (Bharat Bill Payment System) through an RBI-licensed partner: bill payments, mobile/DTH recharges, FASTag, insurance premiums, utility renewals.
+- **Account Aggregator** (RBI AA framework, Sahamati ecosystem): FamilyKit acts as a Financial Information User (FIU) through a partner, for consented financial data (deposits, policies, investments) only.
+- FamilyKit **never holds funds** and **never stores card or UPI data**. Payment instruments stay with the licensed partner.
+- Every payment needs a per-payment PIN/OTP confirmation. Consent is explicit, purpose-bound, time-limited, and revocable at any time.
+- India data residency applies to partner data and FamilyKit records.
+- Audit log every payment attempt, success, failure, consent grant, and consent revoke.
+- Reminders link to renewal and due dates in Documents and Finance & Insurance records.
+- Provider choice is **Pending Approval**: Setu is the candidate; alternatives Decentro and Cashfree. Licences, partner agreements, and legal review are required before build.
+
 ## Security rules
 - Enable Row Level Security (RLS) on every table; enforce family isolation and record ownership in the database, not only frontend checks.
 - Enforce member-level permissions on the server for sensitive operations.
@@ -55,7 +68,7 @@ One unified FamilyKit AI layer serves all systems.
 - Do not make production changes or destructive database changes without explicit approval.
 
 ## Development workflow
-1. Confirm the founder has said "start" for this scope.
+1. Confirm the founder has said "start" for this scope and the Pre-build checklist in `PROJECT_CONTEXT.md` is complete.
 2. Read this file, `.cursor/rules/familykit-core.mdc`, `.cursor/architecture/FAMILYKIT_MASTER_ARCHITECTURE.md`, and `PROJECT_CONTEXT.md`.
 3. Inspect the existing codebase and identify relevant files.
 4. Propose a small plan including UI, data, permissions, encryption, residency, security implications and tests.
@@ -97,6 +110,7 @@ These remain Pending Approval:
 - MFA method.
 - Owner leaves or deceased owner succession.
 - Payment gateway. Razorpay is a candidate only.
+- BBPS / Account Aggregator partner (Setu candidate; Decentro, Cashfree alternatives).
 - Messaging provider. Email and WhatsApp are not selected.
 - Roles and the fine-grained sharing matrix.
 - Detailed database schema.

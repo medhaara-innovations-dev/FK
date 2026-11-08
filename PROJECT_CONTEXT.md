@@ -1,7 +1,7 @@
 # FamilyKit Project Context
 
 **Status:** The empty Next.js foundation and approved folders exist locally. Product behavior has not been built. No feature build starts until the founder explicitly says "start".  
-**Version:** 1.1 · 8 November 2026 (v1.0 · 7 November 2026)  
+**Version:** 1.2 · 8 November 2026 (v1.1 and v1.0 earlier)  
 **Owner:** Medhaara Innovations Private Limited
 
 This file summarizes the product and the current decision status for people building FamilyKit. It follows the reference documents already in this repository. It does not replace them.
@@ -22,6 +22,11 @@ Labels:
 - **Pending Approval** — still open. Cursor must not decide it.
 
 ## Changelog
+
+### v1.2 · 8 November 2026
+
+- Added **Bill Payments & Account Aggregator** capability as a key differentiator (V1.5): BBPS bill payments and recharges, FASTag, insurance premiums, utility renewals, and Account Aggregator data via an RBI-licensed partner. Provider is Pending Approval (Setu candidate; Decentro, Cashfree alternatives).
+- Added the **Pre-build checklist**.
 
 ### v1.1 · 8 November 2026 (founder decisions)
 
@@ -79,6 +84,7 @@ These seven systems are approved. One unified FamilyKit AI layer serves all of t
 | Calendar, Reminders & Family Responsibilities | V1. Important dates, renewals, family tasks, and alerts. |
 | Household Management | V1.5. Appliances, warranties, bills, expenses, and inventory. |
 | Family Utilities | V1.5. Grocery lists, emergency contacts, and private or shared notes. |
+| Bill Payments & Account Aggregator (within Finance & Insurance) | V1.5. **Key differentiator.** BBPS bill payments, recharges, FASTag, premiums, renewals; consented Account Aggregator data. |
 | External Service Ecosystem | V2 and later. Travel, restaurants, entertainment, health, and local services. |
 
 The architecture also names platform responsibilities that support these systems: notifications, subscription, and integrations. Those are part of the layered architecture. They are not extra product systems.
@@ -88,7 +94,7 @@ Roadmap milestones are scope, not promised dates:
 | Phase | Outcome |
 |---|---|
 | V1.0 | Authenticated family spaces, owner-controlled permissions, family data, encrypted private documents, reviewable document intelligence, basic finance and insurance records, calendar and reminders, source-grounded AI. |
-| V1.5 | Household records, warranties, bills, expenses, grocery lists, shared tasks, and utilities. |
+| V1.5 | Bill payments and Account Aggregator (key differentiator), household records, warranties, bills, expenses, grocery lists, shared tasks, and utilities. |
 | V2.0 | Carefully selected external services. |
 | V3.0 | Proactive intelligence, deeper automation, and advanced integrations. |
 
@@ -217,6 +223,19 @@ FamilyKit must follow the India Digital Personal Data Protection Act, 2023:
 - A named grievance officer and contact.
 
 Specialist legal review is still required (**Pending Approval**).
+
+## Bill Payments & Account Aggregator
+
+Bill Payments & Account Aggregator (**key differentiator**, V1.5). Families pay many mobiles, DTH, FASTag, insurance premiums and utilities across separate company apps; FamilyKit lets them do it from one place.
+
+- **Bill payments via BBPS** (Bharat Bill Payment System) through an RBI-licensed partner: bill payments, mobile/DTH recharges, FASTag, insurance premiums, utility renewals.
+- **Account Aggregator** (RBI AA framework, Sahamati ecosystem): FamilyKit acts as a Financial Information User (FIU) through a partner, for consented financial data (deposits, policies, investments) only.
+- FamilyKit **never holds funds** and **never stores card or UPI data**. Payment instruments stay with the licensed partner.
+- Every payment needs a per-payment PIN/OTP confirmation. Consent is explicit, purpose-bound, time-limited, and revocable at any time.
+- India data residency applies to partner data and FamilyKit records.
+- Audit log every payment attempt, success, failure, consent grant, and consent revoke.
+- Reminders link to renewal and due dates in Documents and Finance & Insurance records.
+- Provider choice is **Pending Approval**: Setu is the candidate; alternatives Decentro and Cashfree. Licences, partner agreements, and legal review are required before build.
 
 ## Unified AI
 
@@ -403,6 +422,16 @@ Environments:
 
 `supabase/` is only a reserved place. No schema, policies, or migrations are included. The database schema and permission matrix remain **Pending Approval**.
 
+## Pre-build checklist
+
+All must be complete, with founder sign-off, before the founder says "start" for a feature that depends on them.
+
+1. **Legal and licences:** company legal review; confirm FamilyKit needs no own RBI licence when using a licensed BBPS / AA partner; partner agreements signed; terms of service and privacy policy drafted.
+2. **DPDP Act 2023:** consent notices and flows, purpose register, data-principal rights process (access, correction, deletion, export), breach response plan, retention schedule, grievance officer named.
+3. **Vendor residency and DPAs:** written confirmation of India data residency and a signed data processing agreement from every vendor (Supabase, Vercel, AI/OCR, payment/AA partner, messaging).
+4. **Final decisions:** close the Pending Approval items needed for the next module (sharing matrix, schema, key provider, MFA, succession, providers) and provide the UX screens.
+5. **Environments:** separate development and production Supabase projects in Mumbai (`ap-south-1`), plus staging when approved; no production data in development.
+
 ## Decision protection
 
 Cursor (and any other coding agent) must follow these rules for every **Pending Approval** item:
@@ -426,6 +455,7 @@ These remain **Pending Approval**. The approved development direction above does
 | MFA method | Design is MFA-ready. Method not chosen. |
 | Owner leaves / deceased owner succession | Not decided (nominee or successor access). |
 | Payment gateway | Razorpay is a candidate only. |
+| BBPS / Account Aggregator partner | Setu is the candidate; Decentro and Cashfree are alternatives. Licences and legal review required. |
 | Messaging provider | Email and WhatsApp provider are not selected. |
 | Roles and fine-grained sharing matrix | Ownership principles are confirmed. The matrix is not finalized. |
 | Detailed database schema | Not designed. |

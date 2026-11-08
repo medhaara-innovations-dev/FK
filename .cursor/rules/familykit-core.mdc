@@ -5,7 +5,7 @@ alwaysApply: true
 
 # FamilyKit — Core Development Rules
 
-Version 1.1 · 8 November 2026. See `PROJECT_CONTEXT.md` for the approval record and changelog.
+Version 1.2 · 8 November 2026. See `PROJECT_CONTEXT.md` for the approval record and changelog.
 
 ## 0. Build gate
 
@@ -73,6 +73,7 @@ These remain Pending Approval:
 - MFA method.
 - Owner leaves or deceased owner succession.
 - Payment gateway. Razorpay is a candidate only.
+- BBPS / Account Aggregator partner (Setu candidate; Decentro, Cashfree alternatives).
 - Messaging provider. Email and WhatsApp are not selected.
 - Roles and the fine-grained sharing matrix.
 - Detailed database schema.
@@ -122,6 +123,19 @@ AI rules:
 - Keep personal records, live external search, and bookings or payments separate.
 - Send external AI providers only minimized, masked data, and never raw documents outside India without founder approval.
 
+## 5a. Bill Payments & Account Aggregator
+
+Bill Payments & Account Aggregator (**key differentiator**, V1.5). Families pay many mobiles, DTH, FASTag, insurance premiums and utilities across separate company apps; FamilyKit lets them do it from one place.
+
+- **Bill payments via BBPS** (Bharat Bill Payment System) through an RBI-licensed partner: bill payments, mobile/DTH recharges, FASTag, insurance premiums, utility renewals.
+- **Account Aggregator** (RBI AA framework, Sahamati ecosystem): FamilyKit acts as a Financial Information User (FIU) through a partner, for consented financial data (deposits, policies, investments) only.
+- FamilyKit **never holds funds** and **never stores card or UPI data**. Payment instruments stay with the licensed partner.
+- Every payment needs a per-payment PIN/OTP confirmation. Consent is explicit, purpose-bound, time-limited, and revocable at any time.
+- India data residency applies to partner data and FamilyKit records.
+- Audit log every payment attempt, success, failure, consent grant, and consent revoke.
+- Reminders link to renewal and due dates in Documents and Finance & Insurance records.
+- Provider choice is **Pending Approval**: Setu is the candidate; alternatives Decentro and Cashfree. Licences, partner agreements, and legal review are required before build.
+
 ## 6. Security and Privacy
 
 Security is a fundamental requirement. This is highly sensitive family data.
@@ -141,6 +155,8 @@ Security is a fundamental requirement. This is highly sensitive family data.
 - Do not deploy to production or modify production data without explicit approval.
 - Ask before sharing data, booking, paying, or taking any other external action.
 - Send external partners only the minimum data needed for that approved action.
+
+Before any feature build, complete the Pre-build checklist in `PROJECT_CONTEXT.md`.
 
 ## 7. Coding Standards
 

@@ -2,7 +2,7 @@
 
 **Purpose:** the readable, authoritative reference for FamilyKit and Cursor.  
 **Status:** Product direction confirmed. Approved development direction recorded on 7 November 2026 and updated on 8 November 2026. Unresolved choices are marked Pending Approval. The empty Next.js foundation and approved folders exist locally. Architectural approval is not permission to install packages, create new folders, create schemas, or write application code. No feature build starts until the founder says "start".  
-**Version:** 1.1 · 8 November 2026
+**Version:** 1.2 · 8 November 2026
 
 ## 1. FamilyKit in one sentence
 
@@ -74,6 +74,7 @@ The same document journey is also stated as Scan → AI Organizes → Verify →
 | Finance & insurance | reference records, policies, premiums, deposits, investments, linked documents | V1 basic |
 | Calendar & reminders | important dates, renewals, family tasks and alerts | V1 |
 | Unified AI | authorized questions, source-grounded answers, document intelligence | V1 |
+| Bill payments & Account Aggregator | **key differentiator**: BBPS bills, recharges, FASTag, premiums, renewals; consented AA data via licensed partner | V1.5 |
 | Household | appliances, warranties, bills, expenses, inventory | V1.5 |
 | Utilities | grocery lists, emergency contacts, private/shared notes | V1.5 |
 | Service ecosystem | travel, restaurants, entertainment, health, local services | V2+ |
@@ -193,6 +194,24 @@ FamilyKit owns the family experience, identity, permissions and information stru
 - Which providers to support first, whether their APIs permit the use case, and what consent wording is required.
 - Payment gateway and messaging provider selection.
 
+## 8a. Bill Payments & Account Aggregator
+
+```text
+Reminder (due/renewal date) → user opens bill → fetch via BBPS partner → confirm with PIN/OTP
+       → partner processes payment (FamilyKit holds no funds, no card/UPI data) → receipt + audit log
+```
+
+Bill Payments & Account Aggregator (**key differentiator**, V1.5). Families pay many mobiles, DTH, FASTag, insurance premiums and utilities across separate company apps; FamilyKit lets them do it from one place.
+
+- **Bill payments via BBPS** (Bharat Bill Payment System) through an RBI-licensed partner: bill payments, mobile/DTH recharges, FASTag, insurance premiums, utility renewals.
+- **Account Aggregator** (RBI AA framework, Sahamati ecosystem): FamilyKit acts as a Financial Information User (FIU) through a partner, for consented financial data (deposits, policies, investments) only.
+- FamilyKit **never holds funds** and **never stores card or UPI data**. Payment instruments stay with the licensed partner.
+- Every payment needs a per-payment PIN/OTP confirmation. Consent is explicit, purpose-bound, time-limited, and revocable at any time.
+- India data residency applies to partner data and FamilyKit records.
+- Audit log every payment attempt, success, failure, consent grant, and consent revoke.
+- Reminders link to renewal and due dates in Documents and Finance & Insurance records.
+- Provider choice is **Pending Approval**: Setu is the candidate; alternatives Decentro and Cashfree. Licences, partner agreements, and legal review are required before build.
+
 ## 9. Deployment and environments
 
 ```text
@@ -232,6 +251,7 @@ The managed queue or worker product, selected only after reliability, cost, retr
 | Environments | Separate development, staging, and production | Approved development direction |
 | Payments | Razorpay | Pending Approval. Candidate only. |
 | Notifications | Email and an approved WhatsApp provider | Pending Approval. Provider not selected. |
+| Bill payments / AA partner | Setu (candidate); Decentro, Cashfree alternatives | Pending Approval. Licences and legal review required. |
 | Background-job product | A managed queue or worker | Pending Approval. The behavior and `src/platform/jobs/` location are approved. |
 
 Approved development direction is not permission to install packages, create new folders, create schemas or migrations, or write application code. The Next.js foundation already exists; do not re-initialize it. Avoid AWS, Redis, Kubernetes, and separately deployed services until a measured need is approved.
@@ -241,7 +261,7 @@ Approved development direction is not permission to install packages, create new
 | Phase | Outcome |
 |---|---|
 | V1.0 | authenticated family spaces, owner-controlled permissions, family data, encrypted private documents, reviewable document intelligence, basic finance/insurance records, calendar/reminders, source-grounded AI |
-| V1.5 | household records, warranties, bills, expenses, grocery lists, shared tasks, utilities |
+| V1.5 | bill payments and Account Aggregator (key differentiator), household records, warranties, bills, expenses, grocery lists, shared tasks, utilities |
 | V2.0 | carefully selected external services: travel, restaurants, entertainment, health, local/lifestyle services |
 | V3.0 | proactive intelligence, deeper automation and advanced integrations |
 
@@ -257,6 +277,7 @@ These are scope milestones, not promised release dates.
 | MFA method | Design is MFA-ready | Security and usability |
 | Owner leaves / deceased succession | Not decided | Family privacy and legal implications |
 | Payment gateway | Razorpay is only a candidate | Commercial and operational impact |
+| BBPS / AA partner | Setu candidate; Decentro, Cashfree alternatives | RBI licensing, compliance, cost |
 | Messaging provider | Email and WhatsApp provider are not selected | Template, cost, and consent constraints |
 | Roles and fine-grained sharing matrix | Ownership principles confirmed. The matrix is not finalized. | Defines the family privacy experience |
 | Detailed database schema | Not designed | The domains are known. The tables are not. |
@@ -267,6 +288,8 @@ These are scope milestones, not promised release dates.
 | Background-job product | Behavior and `src/platform/jobs/` are approved. The tool is not selected. | Reliability, cost, and hosting limits |
 | UX screens | Not yet provided | Defines the product experience |
 | Product behavior | The empty Next.js foundation and approved folders exist. Business workflows are not built. | Build starts only when the founder says "start" |
+
+Before build, complete the Pre-build checklist in `PROJECT_CONTEXT.md` (legal/licences, DPDP, vendor residency and DPAs, final decisions, separate dev/prod Supabase in Mumbai).
 
 ## 13. Cursor build rules (short form)
 
