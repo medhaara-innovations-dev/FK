@@ -2,7 +2,7 @@
 
 **Purpose:** the readable, authoritative reference for FamilyKit and Cursor.  
 **Status:** Product direction confirmed. Approved development direction recorded on 7 November 2026 and updated on 8 November 2026. Unresolved choices are marked Pending Approval. The empty Next.js foundation and approved folders exist locally. Architectural approval is not permission to install packages, create new folders, create schemas, or write application code. No feature build starts until the founder says "start".  
-**Version:** 1.2 · 8 November 2026
+**Version:** 1.3 · 8 November 2026
 
 ## 1. FamilyKit in one sentence
 
@@ -10,6 +10,7 @@ FamilyKit is a private, AI-assisted family life management platform: it brings i
 
 ### Confirmed product principles
 
+- **Founder rule (firm):** FamilyKit never sells, distributes, recommends, or advises on insurance policies, mutual funds, stocks, or any product that needs expert or human guidance. It only lets users pay renewals, premiums, and bills for products they already hold. FamilyKit may sell only products that need no expert guidance.
 - Organize the family; do not make the family do unnecessary data entry.
 - Core document journey: **Upload → AI suggests → authorized user verifies → save and remind**.
 - One unified assistant connects authorized information across the product.
@@ -162,6 +163,7 @@ Question → permission check → retrieve authorized, relevant records
 
 ### Confirmed AI rules
 
+- AI must never give financial, insurance, or investment advice or recommend such products. It may only state facts from the user's own authorized records (for example a due date or premium amount).
 - AI never has unrestricted database access.
 - Permission checking happens before retrieval, not after generation.
 - Do not guess missing facts; say when information is absent or unverified.
@@ -205,6 +207,7 @@ Bill Payments & Account Aggregator (**key differentiator**, V1.5). Families pay 
 
 - **Bill payments via BBPS** (Bharat Bill Payment System) through an RBI-licensed partner: bill payments, mobile/DTH recharges, FASTag, insurance premiums, utility renewals.
 - **Account Aggregator** (RBI AA framework, Sahamati ecosystem): FamilyKit acts as a Financial Information User (FIU) through a partner, for consented financial data (deposits, policies, investments) only.
+- Payments are only for renewals, premiums, and bills of products the user already holds. No selling, distribution, or recommendation of insurance, mutual funds, stocks, or other advice-needing products.
 - FamilyKit **never holds funds** and **never stores card or UPI data**. Payment instruments stay with the licensed partner.
 - Every payment needs a per-payment PIN/OTP confirmation. Consent is explicit, purpose-bound, time-limited, and revocable at any time.
 - India data residency applies to partner data and FamilyKit records.

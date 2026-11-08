@@ -1,6 +1,6 @@
 # FamilyKit — Cursor Project Rules
 
-Version 1.2 · 8 November 2026.
+Version 1.3 · 8 November 2026.
 
 Treat `.cursor/architecture/FAMILYKIT_MASTER_ARCHITECTURE.md` as the readable architecture reference and `PROJECT_CONTEXT.md` as the record of founder approvals and Pending Approval decisions.
 
@@ -24,6 +24,8 @@ Document workflow: **Scan → AI Organizes → Verify → Confirm.**
 One unified FamilyKit AI layer serves all systems.
 
 ## Non-negotiable product rules
+- **Founder rule (firm):** FamilyKit never sells, distributes, recommends, or advises on insurance policies, mutual funds, stocks, or any product that needs expert or human guidance. It only lets users pay renewals, premiums, and bills for products they already hold. FamilyKit may sell only products that need no expert guidance.
+- AI must never give financial, insurance, or investment advice or recommend such products. It may only state facts from the user's own authorized records (for example a due date or premium amount).
 - Keep the product focused on family organization and life management.
 - Do not introduce stock-market distractions or direct financial-product selling.
 - AI-extracted information is only a suggestion until a user verifies and confirms it.
@@ -45,6 +47,7 @@ Bill Payments & Account Aggregator (**key differentiator**, V1.5). Families pay 
 
 - **Bill payments via BBPS** (Bharat Bill Payment System) through an RBI-licensed partner: bill payments, mobile/DTH recharges, FASTag, insurance premiums, utility renewals.
 - **Account Aggregator** (RBI AA framework, Sahamati ecosystem): FamilyKit acts as a Financial Information User (FIU) through a partner, for consented financial data (deposits, policies, investments) only.
+- Payments are only for renewals, premiums, and bills of products the user already holds. No selling, distribution, or recommendation of insurance, mutual funds, stocks, or other advice-needing products.
 - FamilyKit **never holds funds** and **never stores card or UPI data**. Payment instruments stay with the licensed partner.
 - Every payment needs a per-payment PIN/OTP confirmation. Consent is explicit, purpose-bound, time-limited, and revocable at any time.
 - India data residency applies to partner data and FamilyKit records.
