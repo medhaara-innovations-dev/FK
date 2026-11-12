@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FamilyKit · Everything in place.</title>
+  <meta name="description" content="Everything important about your family, in one place.">
+  <link rel="preload" href="fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Mulish-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/familykit-brand.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav" data-scrolled="false">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top" aria-label="FamilyKit home">
+        <img src="assets/familykit-logo.png" width="480" height="159" alt="FamilyKit">
+      </a>
+
+      <nav class="nav__links" aria-label="Main">
+        <a href="#why">Why FamilyKit</a>
+        <a href="#how">How it works</a>
+        <a href="#security">Security</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary nav__cta" href="#early-access">Get Early Access</a>
+        <button class="nav__menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <!-- Lucide: menu -->
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="mmenu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="mmenu__top">
+      <a class="nav__logo" href="#top" aria-label="FamilyKit home" data-close>
+        <img src="assets/familykit-logo.png" width="480" height="159" alt="FamilyKit">
+      </a>
+      <button class="mmenu__close" type="button" aria-label="Close menu" data-close>
+        <!-- Lucide: x -->
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mmenu__links" aria-label="Main">
+      <a href="#why" data-close><span>Why FamilyKit</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+      <a href="#how" data-close><span>How it works</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+      <a href="#security" data-close><span>Security</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+      <a href="#pricing" data-close><span>Pricing</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+    </nav>
+    <div class="mmenu__bottom">
+      <a class="btn btn--primary btn--block" href="#early-access" data-close>Get Early Access</a>
+      <p class="mmenu__trust">
+        <!-- Lucide: shield-check -->
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        Your family's data stays in India.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE ===================== -->
+  <main id="main">
+    <!-- Sections are added here one at a time. Anchor ids are fixed: top, why, how, useful, security, testimonials, pricing, early-access -->
+    <section id="top" class="hero" aria-label="Introduction"><!-- HERO: next section to design --></section>
+    <section id="why" class="placeholder" aria-label="Why FamilyKit"></section>
+    <section id="how" class="placeholder" aria-label="How it works"></section>
+    <section id="security" class="placeholder" aria-label="Security and privacy"></section>
+    <section id="pricing" class="placeholder" aria-label="Pricing"></section>
+    <section id="early-access" class="placeholder" aria-label="Get Early Access"></section>
+  </main>
+
+  <script src="js/navbar.js" defer></script>
+</body>
+</html>

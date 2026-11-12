@@ -1,0 +1,116 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- FamilyKit 07 typography specimen v1.2: mobile app first. Poppins (hierarchy + actions) + Mulish (reading).
+     Rendered by ../render_typography.py at deviceScaleFactor 2. Local @font-face = the same static files installed in ~/.fonts;
+     production loads them from Google Fonts (see familykit-typography.css). -->
+<link rel="stylesheet" href="../familykit-brand.css">
+<style>
+@font-face{font-family:'Poppins';font-weight:400;font-style:normal;src:url(file:///home/box/.fonts/Poppins/Poppins-Regular.ttf)}
+@font-face{font-family:'Poppins';font-weight:500;font-style:normal;src:url(file:///home/box/.fonts/Poppins/Poppins-Medium.ttf)}
+@font-face{font-family:'Poppins';font-weight:600;font-style:normal;src:url(file:///home/box/.fonts/Poppins/Poppins-SemiBold.ttf)}
+@font-face{font-family:'Poppins';font-weight:700;font-style:normal;src:url(file:///home/box/.fonts/Poppins/Poppins-Bold.ttf)}
+@font-face{font-family:'Mulish';font-weight:400;font-style:normal;src:url(file:///home/box/.fonts/Mulish/Mulish-Regular.ttf)}
+@font-face{font-family:'Mulish';font-weight:500;font-style:normal;src:url(file:///home/box/.fonts/Mulish/Mulish-Medium.ttf)}
+@font-face{font-family:'Mulish';font-weight:600;font-style:normal;src:url(file:///home/box/.fonts/Mulish/Mulish-SemiBold.ttf)}
+@font-face{font-family:'Mulish';font-weight:700;font-style:normal;src:url(file:///home/box/.fonts/Mulish/Mulish-Bold.ttf)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1400px;background:var(--fk-bg-subtle);padding:40px 56px 48px;font-family:var(--fk-font-body)}
+.head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px}
+.head h1{font-size:28px;line-height:36px;font-weight:600}
+.head p{font-size:15px;color:var(--fk-text-secondary)}
+.row{display:flex;gap:49px}
+.col{width:390px}
+.tag{font-family:var(--fk-font-heading);font-weight:600;font-size:14px;color:var(--fk-primary);margin:0 0 10px 6px;text-transform:uppercase;letter-spacing:.06em}
+.phone{width:390px;height:844px;background:#fff;border:1px solid var(--fk-border);border-radius:44px;overflow:hidden;position:relative;box-shadow:0 18px 40px rgba(19,4,56,.10);display:flex;flex-direction:column}
+.status{height:47px;display:flex;justify-content:space-between;align-items:center;padding:0 30px;font-family:var(--fk-font-heading);font-weight:600;font-size:15px;color:var(--fk-text-primary);flex:none}
+.status .dots{display:flex;gap:5px} .status .dots i{width:17px;height:11px;border-radius:3px;background:var(--fk-text-primary);display:block}
+.content{padding:8px 20px 0;flex:1;overflow:hidden}
+.muted{color:var(--fk-text-muted)}
+.card{border:1px solid var(--fk-border);border-radius:16px;background:#fff}
+.sum{background:var(--fk-surface-inverse);color:#fff;border-radius:20px;padding:18px 20px;margin:16px 0 24px}
+.sum .fk-app-label{color:var(--fk-primary-200)}
+.sum .big{font-family:var(--fk-font-heading);font-weight:600;font-size:1.5rem;line-height:1.333;font-variant-numeric:tabular-nums;margin-top:2px}
+.sum .sub{font-family:var(--fk-font-heading);font-weight:600;font-size:.9375rem;color:var(--fk-accent);margin-top:6px}
+.sechead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.link{font-family:var(--fk-font-heading);font-weight:600;font-size:.875rem;color:var(--fk-text-link);min-height:44px;display:flex;align-items:center}
+.li{display:flex;align-items:center;gap:14px;padding:12px 16px;min-height:72px}
+.li+.li{border-top:1px solid var(--fk-border)}
+.ic{width:44px;height:44px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--fk-font-heading);font-weight:600;font-size:15px}
+.grow{flex:1;min-width:0}
+.amt{font-family:var(--fk-font-heading);font-weight:600;font-size:1rem;line-height:1.5;color:var(--fk-text-primary);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.chip{display:inline-block;font-family:var(--fk-font-body);font-weight:700;font-size:.75rem;line-height:1.333;padding:3px 8px;border-radius:999px;margin-top:4px}
+.warn{background:var(--fk-warning-bg);color:var(--fk-warning-fg);border:1px solid var(--fk-warning-border)}
+.ok{background:var(--fk-success-bg);color:var(--fk-success-fg);border:1px solid var(--fk-success-border)}
+.nav{min-height:84px;padding-left:8px;padding-right:8px;border-top:1px solid var(--fk-border);display:flex;justify-content:space-around;padding-top:8px;flex:none;background:#fff}
+.nav div{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--fk-text-muted)}
+.nav b{width:24px;height:24px;border-radius:7px;border:2px solid currentColor;display:block}
+.nav .on{color:var(--fk-primary)} .nav .on b{background:var(--fk-primary-subtle)}
+.tabs{display:flex;gap:22px;border-bottom:1px solid var(--fk-border);margin:14px 0 16px}
+.tabs span{min-height:44px;display:flex;align-items:center;color:var(--fk-text-secondary)}
+.tabs .sel{color:var(--fk-text-heading);font-weight:600;box-shadow:inset 0 -3px 0 var(--fk-primary)}
+.search{min-height:48px;border:1px solid var(--fk-border-strong);border-radius:12px;display:flex;align-items:center;padding:0 14px;font-size:1rem;color:var(--fk-text-muted);margin-top:14px}
+.doc{padding:14px 16px;display:flex;gap:14px;margin-bottom:12px}
+.banner{background:var(--fk-info-bg);border:1px solid var(--fk-info-border);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.banner .fk-app-body{color:var(--fk-text-primary)}
+.back{display:flex;align-items:center;gap:8px;min-height:44px}
+.back i{width:44px;height:44px;border-radius:12px;background:var(--fk-bg-subtle);display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--fk-font-heading);font-weight:600;font-size:20px;color:var(--fk-text-heading)}
+.field{margin-top:18px}
+.field .fk-app-label{display:block;margin-bottom:6px}
+.input{min-height:48px;border:1px solid var(--fk-border-strong);border-radius:12px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-family:var(--fk-font-body);font-size:1rem;color:var(--fk-text-primary)}
+.input.focus{border:2px solid var(--fk-primary);box-shadow:0 0 0 3px #fff,0 0 0 6px var(--fk-focus-ring)}
+.input.num{font-family:var(--fk-font-heading);font-weight:600;font-variant-numeric:tabular-nums}
+.helper{margin-top:6px}
+.err{color:var(--fk-error-fg)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;width:100%}
+.btn.primary{background:var(--fk-primary);color:#fff}
+.btn.ghost{color:var(--fk-text-link);margin-top:8px}
+.foot{padding:16px 20px 30px;flex:none}
+</style></head><body>
+<div class="head"><h1 class="fk-app-title" style="font-size:28px;line-height:36px">FamilyKit app typography</h1>
+<p>Poppins for hierarchy and actions &nbsp;·&nbsp; Mulish for reading &nbsp;·&nbsp; 390px phone screens</p></div>
+<div class="row">
+
+<div class="col"><div class="tag">1 · Home</div><div class="phone">
+ <div class="status"><span>9:41</span><span class="dots"><i></i><i></i></span></div>
+ <div class="content">
+  <div class="fk-app-label">Good evening, Riya</div>
+  <div class="fk-app-title">Your family</div>
+  <div class="sum"><div class="fk-app-label">Due this month</div><div class="big">₹34,839</div><div class="sub">3 renewals this month</div></div>
+  <div class="sechead"><div class="fk-app-h2">Upcoming renewals</div><div class="link">See all</div></div>
+  <div class="card">
+   <div class="li"><span class="ic" style="background:#EBE6F7;color:#4A13B7">C</span><div class="grow"><div class="fk-app-h3" style="font-size:1rem;line-height:1.5">Car insurance</div><div class="fk-app-caption">Due on 24 Nov 2026</div><span class="chip warn">Due this week</span></div><div class="amt">₹12,450</div></div>
+   <div class="li"><span class="ic" style="background:#F2FDFF;color:#00667A">H</span><div class="grow"><div class="fk-app-h3" style="font-size:1rem;line-height:1.5">Health insurance</div><div class="fk-app-caption">Due on 02 Dec 2026</div></div><div class="amt">₹18,900</div></div>
+   <div class="li"><span class="ic" style="background:#FFF8F2;color:#964700">E</span><div class="grow"><div class="fk-app-h3" style="font-size:1rem;line-height:1.5">Electricity bill</div><div class="fk-app-caption">Due on 28 Nov 2026</div></div><div class="amt">₹2,310</div></div>
+  </div>
+ </div>
+ <div class="nav"><div class="on"><b></b><span class="fk-app-nav-label">Home</span></div><div><b></b><span class="fk-app-nav-label">Documents</span></div><div><b></b><span class="fk-app-nav-label">Reminders</span></div><div><b></b><span class="fk-app-nav-label">Family</span></div></div>
+</div></div>
+
+<div class="col"><div class="tag">2 · Documents</div><div class="phone">
+ <div class="status"><span>9:41</span><span class="dots"><i></i><i></i></span></div>
+ <div class="content">
+  <div class="fk-app-title">Documents</div>
+  <div class="search">Search documents</div>
+  <div class="tabs"><span class="fk-app-tab sel">All</span><span class="fk-app-tab">Insurance</span><span class="fk-app-tab">IDs</span><span class="fk-app-tab">Bills</span></div>
+  <div class="banner"><div class="fk-app-body">2 documents expire in the next 30 days. Renew them early to avoid late fees.</div></div>
+  <div class="card doc"><span class="ic" style="background:#EBE6F7;color:#4A13B7">P</span><div class="grow"><div class="fk-app-h3">Passport · Riya Sharma</div><div class="fk-app-body">Expires on 12 Mar 2027</div><div class="fk-app-caption">PDF · 1.2 MB · Uploaded 2 days ago</div></div></div>
+  <div class="card doc"><span class="ic" style="background:#FFF8F2;color:#964700">C</span><div class="grow"><div class="fk-app-h3">Car insurance policy</div><div class="fk-app-body">Renews on 24 Nov 2026</div><span class="chip warn">Expires in 13 days</span></div></div>
+  <div class="card doc"><span class="ic" style="background:#F2FFF3;color:#006C12">A</span><div class="grow"><div class="fk-app-h3">Aadhaar card · Arjun</div><div class="fk-app-body">No expiry date</div><span class="chip ok">Verified</span></div></div>
+ </div>
+ <div class="nav"><div><b></b><span class="fk-app-nav-label">Home</span></div><div class="on"><b></b><span class="fk-app-nav-label">Documents</span></div><div><b></b><span class="fk-app-nav-label">Reminders</span></div><div><b></b><span class="fk-app-nav-label">Family</span></div></div>
+</div></div>
+
+<div class="col"><div class="tag">3 · Form</div><div class="phone">
+ <div class="status"><span>9:41</span><span class="dots"><i></i><i></i></span></div>
+ <div class="content">
+  <div class="back"><i>‹</i></div>
+  <div class="fk-app-title" style="margin-top:6px">Add document</div>
+  <div class="fk-app-body" style="margin-top:4px">We'll remind you before it expires.</div>
+  <div class="field"><label class="fk-app-label">Document type</label><div class="input">Car insurance <span class="muted">▾</span></div></div>
+  <div class="field"><label class="fk-app-label">Policy number</label><div class="input focus">KA-2026-448120</div><div class="fk-app-caption helper">Printed at the top of your policy</div></div>
+  <div class="field"><label class="fk-app-label">Renewal date</label><div class="input num">24 Nov 2026</div></div>
+  <div class="field"><label class="fk-app-label">Premium amount</label><div class="input num">₹12,450</div><div class="fk-app-caption helper err">Enter the amount shown on your renewal notice</div></div>
+ </div>
+ <div class="foot"><div class="btn primary fk-app-btn">Save document</div><div class="btn ghost fk-app-btn">Cancel</div></div>
+</div></div>
+
+</div></body></html>

@@ -1,0 +1,270 @@
+/* FamilyKit brand tokens v1.2 Final (2026-11-11): familykit-colours.css + familykit-typography.css combined. */
+/* FamilyKit colour tokens v1.0 (2026-11-11). Generated from palette.json, built in OKLCH.
+   "doc" = unchanged value from the founder colour document. */
+:root{
+  /* primary */
+  --fk-primary-50:#F7F5FD;
+  --fk-primary-100:#EBE6F7; /* doc: Primary 10 */
+  --fk-primary-200:#D9D0F3;
+  --fk-primary-300:#C2B0F0;
+  --fk-primary-400:#A78EE7;
+  --fk-primary-500:#8B6ADA;
+  --fk-primary-600:#7543C7; /* doc: Doc text colour */
+  --fk-primary-700:#4A13B7; /* doc: Kept: current landing button */
+  --fk-primary-800:#2D0B84; /* doc: Primary Main */
+  --fk-primary-900:#21025E;
+  --fk-primary-950:#130438; /* doc: Primary 100 */
+  /* lavender */
+  --fk-lavender-50:#F7F5FF;
+  --fk-lavender-100:#EEE9FF;
+  --fk-lavender-200:#DDD3FF;
+  --fk-lavender-300:#C8B5FF;
+  --fk-lavender-400:#B294FF; /* doc: Accent 2 Lavender */
+  --fk-lavender-500:#996DF8;
+  --fk-lavender-600:#8049E3;
+  --fk-lavender-700:#6634BD;
+  --fk-lavender-800:#4D2793;
+  --fk-lavender-900:#361A6A;
+  /* lime */
+  --fk-lime-50:#F9FFDF;
+  --fk-lime-100:#EFFF94; /* doc: Accent 1 Lime */
+  --fk-lime-200:#EAF17D;
+  --fk-lime-300:#E3E26D;
+  --fk-lime-400:#DAD05A; /* doc: Accent 1 Yellow */
+  --fk-lime-500:#BEB542;
+  --fk-lime-600:#9E9621;
+  --fk-lime-700:#7F7800;
+  --fk-lime-800:#605B00;
+  --fk-lime-900:#433F00;
+  /* neutral */
+  --fk-neutral-0:#FFFFFF; /* doc: White */
+  --fk-neutral-50:#F7F6FA;
+  --fk-neutral-100:#EDEAF3; /* doc: Light Grey */
+  --fk-neutral-200:#DCD9E2;
+  --fk-neutral-300:#BFBCC7;
+  --fk-neutral-400:#9D99A6;
+  --fk-neutral-500:#827D8D;
+  --fk-neutral-600:#6B6677;
+  --fk-neutral-700:#4D485A; /* doc: Dark Grey */
+  --fk-neutral-800:#322C40;
+  --fk-neutral-900:#1B132A;
+  --fk-neutral-950:#050011; /* doc: Black */
+  /* success */
+  --fk-success-50:#F2FFF3; /* doc: Success 10 */
+  --fk-success-100:#E3F7E4;
+  --fk-success-200:#C3EAC5;
+  --fk-success-300:#91D994;
+  --fk-success-500:#0FB21D; /* doc: Success base */
+  --fk-success-600:#008816;
+  --fk-success-700:#006C12;
+  --fk-success-900:#125C19; /* doc: Success 100 */
+  /* error */
+  --fk-error-50:#FFF8F8;
+  --fk-error-100:#FFEBEB; /* doc: Error 10 */
+  --fk-error-200:#FFD1D0;
+  --fk-error-300:#FFAAA7;
+  --fk-error-500:#C71010; /* doc: Error base */
+  --fk-error-600:#B40706;
+  --fk-error-700:#970400;
+  --fk-error-900:#5C1B12; /* doc: Error 100 */
+  /* info */
+  --fk-info-50:#F2FDFF; /* doc: Info 10 */
+  --fk-info-100:#E3F4F7;
+  --fk-info-200:#C4E5EC;
+  --fk-info-300:#93CFDF;
+  --fk-info-500:#0BA2C4; /* doc: Info base */
+  --fk-info-600:#00809A;
+  --fk-info-700:#00667A;
+  --fk-info-900:#124E5C; /* doc: Info 100 */
+  /* warning */
+  --fk-warning-50:#FFF8F2; /* doc: Warning 10 */
+  --fk-warning-100:#FDEDDF;
+  --fk-warning-200:#F8D7BD;
+  --fk-warning-300:#F3B589;
+  --fk-warning-500:#DC680F; /* doc: Warning base */
+  --fk-warning-600:#BD5900;
+  --fk-warning-700:#964700;
+  --fk-warning-900:#5C3212; /* doc: Warning 100 */
+
+  /* ---- Semantic roles (use these in components, not raw ramps) ---- */
+  --fk-bg:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-bg-subtle:var(--fk-neutral-50); /* #F7F6FA */
+  --fk-surface:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-surface-raised:var(--fk-primary-50); /* #F7F5FD */
+  --fk-surface-tint:var(--fk-primary-100); /* #EBE6F7 */
+  --fk-surface-inverse:var(--fk-primary-950); /* #130438 */
+  --fk-border:var(--fk-neutral-200); /* #DCD9E2 */
+  --fk-border-strong:var(--fk-neutral-300); /* #BFBCC7 */
+  --fk-border-focus:var(--fk-lavender-500); /* #996DF8 */
+  --fk-text-primary:var(--fk-neutral-900); /* #1B132A */
+  --fk-text-secondary:var(--fk-neutral-700); /* #4D485A */
+  --fk-text-muted:var(--fk-neutral-600); /* #6B6677 */
+  --fk-text-disabled:var(--fk-neutral-400); /* #9D99A6 */
+  --fk-text-heading:var(--fk-primary-800); /* #2D0B84 */
+  --fk-text-link:var(--fk-primary-700); /* #4A13B7 */
+  --fk-text-on-primary:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-text-on-accent:var(--fk-primary-950); /* #130438 */
+  --fk-text-on-inverse:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-primary:var(--fk-primary-700); /* #4A13B7 */
+  --fk-primary-hover:var(--fk-primary-800); /* #2D0B84 */
+  --fk-primary-pressed:var(--fk-primary-900); /* #21025E */
+  --fk-primary-subtle:var(--fk-primary-100); /* #EBE6F7 */
+  --fk-focus-ring:var(--fk-lavender-500); /* #996DF8 */
+  --fk-accent:var(--fk-lime-100); /* #EFFF94 */
+  --fk-accent-hover:var(--fk-lime-200); /* #EAF17D */
+  --fk-accent-strong:var(--fk-lime-400); /* #DAD05A */
+  --fk-accent-2:var(--fk-lavender-400); /* #B294FF */
+  --fk-accent-2-subtle:var(--fk-lavender-100); /* #EEE9FF */
+  --fk-disabled-bg:var(--fk-neutral-100); /* #EDEAF3 */
+  --fk-disabled-fg:var(--fk-neutral-500); /* #827D8D */
+  --fk-success-fg:var(--fk-success-700); /* #006C12 */
+  --fk-success-bg:var(--fk-success-50); /* #F2FFF3 */
+  --fk-success-border:var(--fk-success-200); /* #C3EAC5 */
+  --fk-success-solid:var(--fk-success-600); /* #008816 */
+  --fk-success-icon:var(--fk-success-600); /* #008816 */
+  --fk-success-strong:var(--fk-success-900); /* #125C19 */
+  --fk-error-fg:var(--fk-error-700); /* #970400 */
+  --fk-error-bg:var(--fk-error-50); /* #FFF8F8 */
+  --fk-error-border:var(--fk-error-200); /* #FFD1D0 */
+  --fk-error-solid:var(--fk-error-600); /* #B40706 */
+  --fk-error-icon:var(--fk-error-600); /* #B40706 */
+  --fk-error-strong:var(--fk-error-900); /* #5C1B12 */
+  --fk-warning-fg:var(--fk-warning-700); /* #964700 */
+  --fk-warning-bg:var(--fk-warning-50); /* #FFF8F2 */
+  --fk-warning-border:var(--fk-warning-200); /* #F8D7BD */
+  --fk-warning-solid:var(--fk-warning-600); /* #BD5900 */
+  --fk-warning-icon:var(--fk-warning-600); /* #BD5900 */
+  --fk-warning-strong:var(--fk-warning-900); /* #5C3212 */
+  --fk-info-fg:var(--fk-info-700); /* #00667A */
+  --fk-info-bg:var(--fk-info-50); /* #F2FDFF */
+  --fk-info-border:var(--fk-info-200); /* #C4E5EC */
+  --fk-info-solid:var(--fk-info-600); /* #00809A */
+  --fk-info-icon:var(--fk-info-600); /* #00809A */
+  --fk-info-strong:var(--fk-info-900); /* #124E5C */
+
+  /* ---- Legacy landing tokens, remapped (tokens.css v1) ---- */
+  --fk-heading:var(--fk-text-heading);
+  --fk-ink:var(--fk-text-primary);
+  --fk-body:var(--fk-text-secondary);
+  --fk-muted:var(--fk-text-muted);
+  --fk-focus:var(--fk-focus-ring);
+  --fk-dark:var(--fk-surface-inverse);
+  --fk-lav-50:var(--fk-primary-50); --fk-lav-100:var(--fk-lavender-100); --fk-lav-200:var(--fk-lavender-200); --fk-lav-300:var(--fk-lavender-300);
+}
+
+/* FamilyKit typography tokens v1.2 Final (2026-11-11). Founder-approved final type system, mobile app first.
+   Two fonts only: Poppins (hierarchy and actions: screen titles, headings, buttons, tabs, amounts, stats, dates)
+   and Mulish (reading: body text, labels, captions, helper text). Both fonts include the ₹ glyph.
+
+   Load the fonts in <head> (before this stylesheet):
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   Rules: Poppins for hierarchy and actions, Mulish for reading. Never below 12px. No Mulish weights under 400
+   (it looks thin on phones). Sizes are in rem (1rem = 16px; px in comments) so OS / browser text scaling is respected:
+   layouts must survive 130% font scale. Tap targets stay 44-48px whatever the text size.
+   Note: Poppins has proportional figures and no 'tnum' feature, so tabular-nums has no effect on Poppins:
+   right-align amount columns. Mulish figures are tabular by default. */
+:root{
+  /* families */
+  --fk-font-heading:'Poppins', system-ui, sans-serif;
+  --fk-font-body:'Mulish', system-ui, sans-serif;
+  /* weights */
+  --fk-weight-regular:400;
+  --fk-weight-medium:500;
+  --fk-weight-semibold:600;
+  --fk-weight-bold:700;
+
+  /* ---- App (primary): mobile app screens and PWA, 390px-class phones ---- */
+  /* Screen title / H1: Poppins 600, #2D0B84 */
+  --fk-app-title-size:1.5rem;      /* 24px */
+  --fk-app-title-line:1.333;       /* 32px */
+  /* Section heading / H2: Poppins 600 */
+  --fk-app-h2-size:1.25rem;        /* 20px */
+  --fk-app-h2-line:1.4;            /* 28px */
+  /* Card & list title / H3: Poppins 600 (16-18px) */
+  --fk-app-h3-size:1.0625rem;      /* 17px; use 16px in dense lists, 18px for hero cards */
+  --fk-app-h3-line:1.412;          /* 24px */
+  /* Body: Mulish 400, #4D485A */
+  --fk-app-body-size:0.9375rem;    /* 15px */
+  --fk-app-body-line:1.467;        /* 22px */
+  --fk-app-body-long-size:1rem;    /* 16px for long reading */
+  --fk-app-body-long-line:1.5;     /* 24px */
+  /* Buttons and tabs: Poppins 500-600, 14-15px */
+  --fk-app-button-size:0.9375rem;  /* 15px */
+  --fk-app-button-sm-size:0.875rem;/* 14px */
+  --fk-app-tab-size:0.875rem;      /* 14px */
+  /* Bottom nav labels: Poppins 500 */
+  --fk-app-nav-label-size:0.75rem; /* 12px */
+  /* Labels / captions / helper text: Mulish 600, muted #6B6677 */
+  --fk-app-label-size:0.8125rem;   /* 13px */
+  --fk-app-caption-size:0.75rem;   /* 12px = minimum */
+
+  /* ---- Website: desktop values (768px and up); mobile values in the media query below ---- */
+  /* H1: Poppins 700, #2D0B84 */
+  --fk-h1-size:3.5rem;             /* 56px */
+  --fk-h1-line:1.1;
+  /* H2: Poppins 600 */
+  --fk-h2-size:2.5rem;             /* 40px */
+  --fk-h2-line:1.2;
+  /* H3: Poppins 600 */
+  --fk-h3-size:1.375rem;           /* 22px */
+  --fk-h3-line:1.3;
+  /* Body: Mulish 400, #4D485A */
+  --fk-body-size:1rem;             /* 16px */
+  --fk-body-line:1.6;
+  /* Buttons and nav: Poppins 500-600 */
+  --fk-button-size:0.9375rem;      /* 15px */
+  --fk-button-sm-size:0.875rem;    /* 14px */
+  --fk-button-line:1.2;
+  --fk-nav-size:0.9375rem;         /* 15px */
+  /* Labels / small text: Mulish 600, muted #6B6677 */
+  --fk-label-size:0.8125rem;       /* 13px */
+  --fk-small-size:0.75rem;         /* 12px = minimum */
+  --fk-label-line:1.4;
+
+  /* shared */
+  --fk-min-size:0.75rem;           /* 12px: nothing smaller, anywhere */
+  --fk-num-weight:600;             /* amounts, stats, dates: Poppins 600 */
+  --fk-heading-tracking:-0.005em;  /* 0 to -0.5% */
+  --fk-caps-tracking:0.06em;       /* uppercase labels at 12px */
+  --fk-tap-target:48px;            /* preferred; 44px minimum, independent of text size */
+  --fk-tap-target-min:44px;
+}
+@media (max-width:767px){
+  :root{
+    --fk-h1-size:2rem;             /* 32px */
+    --fk-h2-size:1.75rem;          /* 28px */
+    --fk-h3-size:1.125rem;         /* 18px */
+    --fk-body-size:0.9375rem;      /* 15px */
+  }
+}
+
+/* Base styles (optional; uses colour tokens from familykit-colours.css with hex fallbacks) */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:var(--fk-font-body);font-weight:400;font-size:var(--fk-body-size);line-height:var(--fk-body-line);color:var(--fk-text-secondary,#4D485A)}
+h1,.fk-h1{font-family:var(--fk-font-heading);font-weight:700;font-size:var(--fk-h1-size);line-height:var(--fk-h1-line);letter-spacing:var(--fk-heading-tracking);color:var(--fk-text-heading,#2D0B84)}
+h2,.fk-h2{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-h2-size);line-height:var(--fk-h2-line);letter-spacing:var(--fk-heading-tracking);color:var(--fk-text-heading,#2D0B84)}
+h3,.fk-h3{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-h3-size);line-height:var(--fk-h3-line);color:var(--fk-text-heading,#2D0B84)}
+button,.fk-btn,nav a{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-button-size);line-height:var(--fk-button-line)}
+button,.fk-btn{min-height:var(--fk-tap-target)}
+.fk-btn-sm{font-size:var(--fk-button-sm-size);min-height:var(--fk-tap-target-min)}
+.fk-label{font-family:var(--fk-font-body);font-weight:600;font-size:var(--fk-label-size);line-height:var(--fk-label-line);color:var(--fk-text-muted,#6B6677)}
+.fk-small,.fk-caption,.fk-helper{font-family:var(--fk-font-body);font-weight:600;font-size:var(--fk-small-size);line-height:var(--fk-label-line);color:var(--fk-text-muted,#6B6677)}
+.fk-caps{font-size:var(--fk-small-size);font-weight:600;text-transform:uppercase;letter-spacing:var(--fk-caps-tracking)}
+.fk-num,.fk-amount,.fk-stat,.fk-date{font-family:var(--fk-font-heading);font-weight:var(--fk-num-weight);font-variant-numeric:tabular-nums}
+table td.fk-num,table th.fk-num{text-align:right}
+
+/* App screens (mobile app / PWA) */
+.fk-app-title{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-app-title-size);line-height:var(--fk-app-title-line);color:var(--fk-text-heading,#2D0B84)}
+.fk-app-h2{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-app-h2-size);line-height:var(--fk-app-h2-line);color:var(--fk-text-heading,#2D0B84)}
+.fk-app-h3{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-app-h3-size);line-height:var(--fk-app-h3-line);color:var(--fk-text-primary,#1B132A)}
+.fk-app-body{font-family:var(--fk-font-body);font-weight:400;font-size:var(--fk-app-body-size);line-height:var(--fk-app-body-line);color:var(--fk-text-secondary,#4D485A)}
+.fk-app-body-long{font-size:var(--fk-app-body-long-size);line-height:var(--fk-app-body-long-line)}
+.fk-app-btn{font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-app-button-size);line-height:1.2;min-height:var(--fk-tap-target)}
+.fk-app-tab{font-family:var(--fk-font-heading);font-weight:500;font-size:var(--fk-app-tab-size);min-height:var(--fk-tap-target-min)}
+.fk-app-tab[aria-selected="true"]{font-weight:600}
+.fk-app-nav-label{font-family:var(--fk-font-heading);font-weight:500;font-size:var(--fk-app-nav-label-size);line-height:1.333}
+.fk-app-label{font-family:var(--fk-font-body);font-weight:600;font-size:var(--fk-app-label-size);line-height:1.385;color:var(--fk-text-muted,#6B6677)}
+.fk-app-caption{font-family:var(--fk-font-body);font-weight:600;font-size:var(--fk-app-caption-size);line-height:1.333;color:var(--fk-text-muted,#6B6677)}

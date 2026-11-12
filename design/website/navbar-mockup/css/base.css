@@ -1,0 +1,39 @@
+/* FamilyKit landing: page-level base + shared components (buttons). Tokens come from familykit-brand.css. */
+:root{
+  --fk-container:1200px;
+  --fk-gutter:24px;
+  --fk-nav-h:80px;          /* desktop, at top of page */
+  --fk-nav-h-scrolled:64px; /* desktop, after scrolling */
+  --fk-radius-btn:999px;
+  --fk-ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (max-width:1023px){ :root{ --fk-gutter:16px; --fk-nav-h:64px; --fk-nav-h-scrolled:64px; } }
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--fk-nav-h-scrolled) + 16px)}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+body{margin:0;background:var(--fk-bg);-webkit-font-smoothing:antialiased}
+body.is-locked{overflow:hidden}
+img{display:block;max-width:100%;height:auto}
+
+/* Focus: one visible ring everywhere (lavender 500, 3px, 2px gap) */
+:focus-visible{outline:3px solid var(--fk-focus-ring);outline-offset:2px}
+
+.skip-link{position:absolute;left:16px;top:-100px;z-index:100;padding:12px 16px;border-radius:8px;background:var(--fk-primary);color:#fff;font-family:var(--fk-font-heading);font-weight:600;text-decoration:none}
+.skip-link:focus{top:12px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border:0;border-radius:var(--fk-radius-btn);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-button-size);line-height:1.2;letter-spacing:0;text-decoration:none;white-space:nowrap;cursor:pointer;
+  transition:background-color .18s var(--fk-ease),box-shadow .18s var(--fk-ease),transform .18s var(--fk-ease)}
+.btn--primary{background:var(--fk-primary);color:var(--fk-text-on-primary);box-shadow:0 1px 2px rgba(33,2,94,.12),0 4px 12px -4px rgba(74,19,183,.35)}
+.btn--primary:hover{background:var(--fk-primary-hover);box-shadow:0 1px 2px rgba(33,2,94,.16),0 8px 18px -6px rgba(45,11,132,.45)}
+.btn--primary:active{background:var(--fk-primary-pressed);box-shadow:0 1px 2px rgba(33,2,94,.2);transform:translateY(1px)}
+.btn--block{display:flex;width:100%;min-height:56px;font-size:1rem}
+
+/* Hero background (content comes in the next step) */
+.hero{min-height:720px;background:
+  radial-gradient(900px 420px at 85% -10%, rgba(178,148,255,.22), transparent 70%),
+  linear-gradient(180deg,var(--fk-lavender-50) 0%,#FFFFFF 100%);
+  padding-top:var(--fk-nav-h);}
+.placeholder{min-height:640px}
