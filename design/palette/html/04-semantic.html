@@ -1,0 +1,75 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;background:#fff;font-family:Mulish,sans-serif;color:#4D485A;padding:64px 72px 72px;font-size:15px;line-height:1.5}
+h1{font:800 40px/1.15 Poppins;color:#2D0B84;letter-spacing:-.01em}
+h2{font:700 22px/1.3 Poppins;color:#2D0B84;margin:44px 0 6px}
+h3{font:700 16px/1.3 Poppins;color:#1B132A}
+.eyebrow{font:700 12px/1 Mulish;letter-spacing:.12em;text-transform:uppercase;color:#4A13B7;margin-bottom:12px}
+.lead{font-size:17px;max-width:900px;margin-top:12px}
+.sub{font-size:14px;color:#6B6677;margin-bottom:16px;max-width:1000px}
+.ramp{display:grid;gap:8px}
+.sw{border-radius:14px;overflow:hidden;border:1px solid #DCD9E2;background:#fff;position:relative}
+.chip{height:120px;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between}
+.chip .st{font:700 15px/1 Poppins}
+.chip .cr{font:600 12px/1.3 Mulish}
+.meta{padding:10px 12px 12px}
+.meta .hx{font:700 14px/1.2 Poppins;color:#1B132A}
+.meta .nm{font-size:12px;color:#6B6677;margin-top:3px;line-height:1.35}
+.doc{position:absolute;top:8px;right:8px;font:800 12px/1 Mulish;padding:4px 7px;border-radius:99px;background:#EFFF94;color:#130438;border:1px solid #DAD05A}
+.row{display:flex;gap:24px}
+.card{border:1px solid #DCD9E2;border-radius:18px;padding:20px 22px;background:#fff}
+.note{background:#F7F5FD;border:1px solid #EBE6F7;border-radius:18px;padding:20px 24px}
+.note b{color:#1B132A}
+ul.c{padding-left:18px} ul.c li{margin:4px 0}
+table{border-collapse:collapse;width:100%}
+td,th{text-align:left;padding:9px 10px;border-bottom:1px solid #DCD9E2;font-size:14px;vertical-align:middle}
+th{font:700 12px/1.2 Mulish;letter-spacing:.06em;text-transform:uppercase;color:#6B6677}
+.mini{display:inline-block;width:22px;height:22px;border-radius:6px;vertical-align:middle;border:1px solid rgba(5,0,17,.12);margin-right:8px}
+.pass{font:800 12px/1 Mulish;padding:4px 8px;border-radius:99px;background:#E3F7E4;color:#006C12}
+.fail{font:800 12px/1 Mulish;padding:4px 8px;border-radius:99px;background:#FFEBEB;color:#970400}
+.mono{font-family:'DejaVu Sans Mono',monospace;font-size:12px}
+.rt td{padding:7px 5px;font-size:13px}
+</style></head><body><div class="eyebrow">FamilyKit palette · 04</div><h1>Semantic · Success, Error, Warning, Info</h1>
+<p class="lead">The doc's hues are kept. Each is now an 8-step ramp: <b>50</b> background · <b>100–200</b> borders · <b>500</b> the doc base (icons, charts) · <b>600</b> solid fill · <b>700</b> text · <b>900</b> the doc's dark value.</p>
+<div class="row" style="margin-top:24px"><div class="card" style="flex:1;padding:16px 18px"><div style="font:700 15px Mulish;color:#0FB21D">Success base as text</div><div style="margin:4px 0 10px"><span class="fail">2.84:1</span></div>
+<div style="font:700 15px Mulish;color:#006C12">Success-700 as text</div><div style="margin-top:4px"><span class="pass">6.66:1</span></div></div><div class="card" style="flex:1;padding:16px 18px"><div style="font:700 15px Mulish;color:#C71010">Error base as text</div><div style="margin:4px 0 10px"><span class="pass">5.98:1</span></div>
+<div style="font:700 15px Mulish;color:#970400">Error-700 as text</div><div style="margin-top:4px"><span class="pass">9.00:1</span></div></div><div class="card" style="flex:1;padding:16px 18px"><div style="font:700 15px Mulish;color:#DC680F">Warning base as text</div><div style="margin:4px 0 10px"><span class="fail">3.48:1</span></div>
+<div style="font:700 15px Mulish;color:#964700">Warning-700 as text</div><div style="margin-top:4px"><span class="pass">6.57:1</span></div></div><div class="card" style="flex:1;padding:16px 18px"><div style="font:700 15px Mulish;color:#0BA2C4">Info base as text</div><div style="margin:4px 0 10px"><span class="fail">3.01:1</span></div>
+<div style="font:700 15px Mulish;color:#00667A">Info-700 as text</div><div style="margin-top:4px"><span class="pass">6.60:1</span></div></div></div>
+<h2 style="margin-top:32px">Success</h2><p class="sub">Doc base #0FB21D = success-500 (2.84:1 on white — fails as text). Text uses <b>success-700 #006C12</b> (6.5:1 on its 50 tint). Solid fills with white text use success-600 (4.6:1).</p>
+<div class="ramp" style="grid-template-columns:repeat(8,1fr)"><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#F2FFF3;color:#050011"><span class="st">50</span><span class="cr">1.03:1 on white<br>L 0.99 · C 0.02</span></div>
+<div class="meta"><div class="hx">#F2FFF3</div><div class="nm">success-50<br>Success 10</div></div></div><div class="sw"><div class="chip" style="background:#E3F7E4;color:#050011"><span class="st">100</span><span class="cr">1.12:1 on white<br>L 0.96 · C 0.03</span></div>
+<div class="meta"><div class="hx">#E3F7E4</div><div class="nm">success-100</div></div></div><div class="sw"><div class="chip" style="background:#C3EAC5;color:#050011"><span class="st">200</span><span class="cr">1.32:1 on white<br>L 0.90 · C 0.06</span></div>
+<div class="meta"><div class="hx">#C3EAC5</div><div class="nm">success-200</div></div></div><div class="sw"><div class="chip" style="background:#91D994;color:#050011"><span class="st">300</span><span class="cr">1.67:1 on white<br>L 0.82 · C 0.12</span></div>
+<div class="meta"><div class="hx">#91D994</div><div class="nm">success-300</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#0FB21D;color:#050011"><span class="st">500</span><span class="cr">2.84:1 on white<br>L 0.66 · C 0.22</span></div>
+<div class="meta"><div class="hx">#0FB21D</div><div class="nm">success-500<br>Success base</div></div></div><div class="sw"><div class="chip" style="background:#008816;color:#FFFFFF"><span class="st">600</span><span class="cr">4.63:1 white text<br>L 0.54 · C 0.18</span></div>
+<div class="meta"><div class="hx">#008816</div><div class="nm">success-600</div></div></div><div class="sw"><div class="chip" style="background:#006C12;color:#FFFFFF"><span class="st">700</span><span class="cr">6.66:1 white text<br>L 0.46 · C 0.15</span></div>
+<div class="meta"><div class="hx">#006C12</div><div class="nm">success-700</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#125C19;color:#FFFFFF"><span class="st">900</span><span class="cr">8.17:1 white text<br>L 0.42 · C 0.12</span></div>
+<div class="meta"><div class="hx">#125C19</div><div class="nm">success-900<br>Success 100</div></div></div></div><h2 style="margin-top:32px">Error</h2><p class="sub">Doc base #C71010 = error-500 (5.98:1 on white — passes, but 700 is still used for text, to match the others). Text uses <b>error-700 #970400</b> (8.6:1 on its 50 tint). Solid fills with white text use error-600 (7.1:1).</p>
+<div class="ramp" style="grid-template-columns:repeat(8,1fr)"><div class="sw"><div class="chip" style="background:#FFF8F8;color:#050011"><span class="st">50</span><span class="cr">1.05:1 on white<br>L 0.98 · C 0.01</span></div>
+<div class="meta"><div class="hx">#FFF8F8</div><div class="nm">error-50</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#FFEBEB;color:#050011"><span class="st">100</span><span class="cr">1.15:1 on white<br>L 0.96 · C 0.02</span></div>
+<div class="meta"><div class="hx">#FFEBEB</div><div class="nm">error-100<br>Error 10</div></div></div><div class="sw"><div class="chip" style="background:#FFD1D0;color:#050011"><span class="st">200</span><span class="cr">1.37:1 on white<br>L 0.90 · C 0.05</span></div>
+<div class="meta"><div class="hx">#FFD1D0</div><div class="nm">error-200</div></div></div><div class="sw"><div class="chip" style="background:#FFAAA7;color:#050011"><span class="st">300</span><span class="cr">1.82:1 on white<br>L 0.82 · C 0.10</span></div>
+<div class="meta"><div class="hx">#FFAAA7</div><div class="nm">error-300</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#C71010;color:#FFFFFF"><span class="st">500</span><span class="cr">5.98:1 white text<br>L 0.53 · C 0.21</span></div>
+<div class="meta"><div class="hx">#C71010</div><div class="nm">error-500<br>Error base</div></div></div><div class="sw"><div class="chip" style="background:#B40706;color:#FFFFFF"><span class="st">600</span><span class="cr">7.06:1 white text<br>L 0.49 · C 0.20</span></div>
+<div class="meta"><div class="hx">#B40706</div><div class="nm">error-600</div></div></div><div class="sw"><div class="chip" style="background:#970400;color:#FFFFFF"><span class="st">700</span><span class="cr">9.0:1 white text<br>L 0.43 · C 0.17</span></div>
+<div class="meta"><div class="hx">#970400</div><div class="nm">error-700</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#5C1B12;color:#FFFFFF"><span class="st">900</span><span class="cr">12.96:1 white text<br>L 0.33 · C 0.10</span></div>
+<div class="meta"><div class="hx">#5C1B12</div><div class="nm">error-900<br>Error 100</div></div></div></div><h2 style="margin-top:32px">Warning</h2><p class="sub">Doc base #DC680F = warning-500 (3.48:1 on white — fails as text). Text uses <b>warning-700 #964700</b> (6.2:1 on its 50 tint). Solid fills with white text use warning-600 (4.6:1).</p>
+<div class="ramp" style="grid-template-columns:repeat(8,1fr)"><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#FFF8F2;color:#050011"><span class="st">50</span><span class="cr">1.05:1 on white<br>L 0.98 · C 0.01</span></div>
+<div class="meta"><div class="hx">#FFF8F2</div><div class="nm">warning-50<br>Warning 10</div></div></div><div class="sw"><div class="chip" style="background:#FDEDDF;color:#050011"><span class="st">100</span><span class="cr">1.14:1 on white<br>L 0.95 · C 0.03</span></div>
+<div class="meta"><div class="hx">#FDEDDF</div><div class="nm">warning-100</div></div></div><div class="sw"><div class="chip" style="background:#F8D7BD;color:#050011"><span class="st">200</span><span class="cr">1.36:1 on white<br>L 0.90 · C 0.05</span></div>
+<div class="meta"><div class="hx">#F8D7BD</div><div class="nm">warning-200</div></div></div><div class="sw"><div class="chip" style="background:#F3B589;color:#050011"><span class="st">300</span><span class="cr">1.78:1 on white<br>L 0.82 · C 0.09</span></div>
+<div class="meta"><div class="hx">#F3B589</div><div class="nm">warning-300</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#DC680F;color:#050011"><span class="st">500</span><span class="cr">3.48:1 on white<br>L 0.65 · C 0.17</span></div>
+<div class="meta"><div class="hx">#DC680F</div><div class="nm">warning-500<br>Warning base</div></div></div><div class="sw"><div class="chip" style="background:#BD5900;color:#FFFFFF"><span class="st">600</span><span class="cr">4.57:1 white text<br>L 0.58 · C 0.15</span></div>
+<div class="meta"><div class="hx">#BD5900</div><div class="nm">warning-600</div></div></div><div class="sw"><div class="chip" style="background:#964700;color:#FFFFFF"><span class="st">700</span><span class="cr">6.57:1 white text<br>L 0.49 · C 0.13</span></div>
+<div class="meta"><div class="hx">#964700</div><div class="nm">warning-700</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#5C3212;color:#FFFFFF"><span class="st">900</span><span class="cr">10.94:1 white text<br>L 0.36 · C 0.07</span></div>
+<div class="meta"><div class="hx">#5C3212</div><div class="nm">warning-900<br>Warning 100</div></div></div></div><h2 style="margin-top:32px">Info</h2><p class="sub">Doc base #0BA2C4 = info-500 (3.01:1 on white — fails as text). Text uses <b>info-700 #00667A</b> (6.4:1 on its 50 tint). Solid fills with white text use info-600 (4.6:1).</p>
+<div class="ramp" style="grid-template-columns:repeat(8,1fr)"><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#F2FDFF;color:#050011"><span class="st">50</span><span class="cr">1.04:1 on white<br>L 0.99 · C 0.01</span></div>
+<div class="meta"><div class="hx">#F2FDFF</div><div class="nm">info-50<br>Info 10</div></div></div><div class="sw"><div class="chip" style="background:#E3F4F7;color:#050011"><span class="st">100</span><span class="cr">1.13:1 on white<br>L 0.95 · C 0.02</span></div>
+<div class="meta"><div class="hx">#E3F4F7</div><div class="nm">info-100</div></div></div><div class="sw"><div class="chip" style="background:#C4E5EC;color:#050011"><span class="st">200</span><span class="cr">1.33:1 on white<br>L 0.90 · C 0.04</span></div>
+<div class="meta"><div class="hx">#C4E5EC</div><div class="nm">info-200</div></div></div><div class="sw"><div class="chip" style="background:#93CFDF;color:#050011"><span class="st">300</span><span class="cr">1.72:1 on white<br>L 0.82 · C 0.07</span></div>
+<div class="meta"><div class="hx">#93CFDF</div><div class="nm">info-300</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#0BA2C4;color:#050011"><span class="st">500</span><span class="cr">3.01:1 on white<br>L 0.66 · C 0.12</span></div>
+<div class="meta"><div class="hx">#0BA2C4</div><div class="nm">info-500<br>Info base</div></div></div><div class="sw"><div class="chip" style="background:#00809A;color:#FFFFFF"><span class="st">600</span><span class="cr">4.61:1 white text<br>L 0.55 · C 0.10</span></div>
+<div class="meta"><div class="hx">#00809A</div><div class="nm">info-600</div></div></div><div class="sw"><div class="chip" style="background:#00667A;color:#FFFFFF"><span class="st">700</span><span class="cr">6.6:1 white text<br>L 0.47 · C 0.08</span></div>
+<div class="meta"><div class="hx">#00667A</div><div class="nm">info-700</div></div></div><div class="sw"><span class="doc">DOC</span><div class="chip" style="background:#124E5C;color:#FFFFFF"><span class="st">900</span><span class="cr">9.25:1 white text<br>L 0.39 · C 0.06</span></div>
+<div class="meta"><div class="hx">#124E5C</div><div class="nm">info-900<br>Info 100</div></div></div></div></body></html>

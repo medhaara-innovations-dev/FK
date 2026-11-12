@@ -1,0 +1,152 @@
+/* FamilyKit colour tokens v1.0 (2026-11-11). Generated from palette.json, built in OKLCH.
+   "doc" = unchanged value from the founder colour document. */
+:root{
+  /* primary */
+  --fk-primary-50:#F7F5FD;
+  --fk-primary-100:#EBE6F7; /* doc: Primary 10 */
+  --fk-primary-200:#D9D0F3;
+  --fk-primary-300:#C2B0F0;
+  --fk-primary-400:#A78EE7;
+  --fk-primary-500:#8B6ADA;
+  --fk-primary-600:#7543C7; /* doc: Doc text colour */
+  --fk-primary-700:#4A13B7; /* doc: Kept: current landing button */
+  --fk-primary-800:#2D0B84; /* doc: Primary Main */
+  --fk-primary-900:#21025E;
+  --fk-primary-950:#130438; /* doc: Primary 100 */
+  /* lavender */
+  --fk-lavender-50:#F7F5FF;
+  --fk-lavender-100:#EEE9FF;
+  --fk-lavender-200:#DDD3FF;
+  --fk-lavender-300:#C8B5FF;
+  --fk-lavender-400:#B294FF; /* doc: Accent 2 Lavender */
+  --fk-lavender-500:#996DF8;
+  --fk-lavender-600:#8049E3;
+  --fk-lavender-700:#6634BD;
+  --fk-lavender-800:#4D2793;
+  --fk-lavender-900:#361A6A;
+  /* lime */
+  --fk-lime-50:#F9FFDF;
+  --fk-lime-100:#EFFF94; /* doc: Accent 1 Lime */
+  --fk-lime-200:#EAF17D;
+  --fk-lime-300:#E3E26D;
+  --fk-lime-400:#DAD05A; /* doc: Accent 1 Yellow */
+  --fk-lime-500:#BEB542;
+  --fk-lime-600:#9E9621;
+  --fk-lime-700:#7F7800;
+  --fk-lime-800:#605B00;
+  --fk-lime-900:#433F00;
+  /* neutral */
+  --fk-neutral-0:#FFFFFF; /* doc: White */
+  --fk-neutral-50:#F7F6FA;
+  --fk-neutral-100:#EDEAF3; /* doc: Light Grey */
+  --fk-neutral-200:#DCD9E2;
+  --fk-neutral-300:#BFBCC7;
+  --fk-neutral-400:#9D99A6;
+  --fk-neutral-500:#827D8D;
+  --fk-neutral-600:#6B6677;
+  --fk-neutral-700:#4D485A; /* doc: Dark Grey */
+  --fk-neutral-800:#322C40;
+  --fk-neutral-900:#1B132A;
+  --fk-neutral-950:#050011; /* doc: Black */
+  /* success */
+  --fk-success-50:#F2FFF3; /* doc: Success 10 */
+  --fk-success-100:#E3F7E4;
+  --fk-success-200:#C3EAC5;
+  --fk-success-300:#91D994;
+  --fk-success-500:#0FB21D; /* doc: Success base */
+  --fk-success-600:#008816;
+  --fk-success-700:#006C12;
+  --fk-success-900:#125C19; /* doc: Success 100 */
+  /* error */
+  --fk-error-50:#FFF8F8;
+  --fk-error-100:#FFEBEB; /* doc: Error 10 */
+  --fk-error-200:#FFD1D0;
+  --fk-error-300:#FFAAA7;
+  --fk-error-500:#C71010; /* doc: Error base */
+  --fk-error-600:#B40706;
+  --fk-error-700:#970400;
+  --fk-error-900:#5C1B12; /* doc: Error 100 */
+  /* info */
+  --fk-info-50:#F2FDFF; /* doc: Info 10 */
+  --fk-info-100:#E3F4F7;
+  --fk-info-200:#C4E5EC;
+  --fk-info-300:#93CFDF;
+  --fk-info-500:#0BA2C4; /* doc: Info base */
+  --fk-info-600:#00809A;
+  --fk-info-700:#00667A;
+  --fk-info-900:#124E5C; /* doc: Info 100 */
+  /* warning */
+  --fk-warning-50:#FFF8F2; /* doc: Warning 10 */
+  --fk-warning-100:#FDEDDF;
+  --fk-warning-200:#F8D7BD;
+  --fk-warning-300:#F3B589;
+  --fk-warning-500:#DC680F; /* doc: Warning base */
+  --fk-warning-600:#BD5900;
+  --fk-warning-700:#964700;
+  --fk-warning-900:#5C3212; /* doc: Warning 100 */
+
+  /* ---- Semantic roles (use these in components, not raw ramps) ---- */
+  --fk-bg:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-bg-subtle:var(--fk-neutral-50); /* #F7F6FA */
+  --fk-surface:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-surface-raised:var(--fk-primary-50); /* #F7F5FD */
+  --fk-surface-tint:var(--fk-primary-100); /* #EBE6F7 */
+  --fk-surface-inverse:var(--fk-primary-950); /* #130438 */
+  --fk-border:var(--fk-neutral-200); /* #DCD9E2 */
+  --fk-border-strong:var(--fk-neutral-300); /* #BFBCC7 */
+  --fk-border-focus:var(--fk-lavender-500); /* #996DF8 */
+  --fk-text-primary:var(--fk-neutral-900); /* #1B132A */
+  --fk-text-secondary:var(--fk-neutral-700); /* #4D485A */
+  --fk-text-muted:var(--fk-neutral-600); /* #6B6677 */
+  --fk-text-disabled:var(--fk-neutral-400); /* #9D99A6 */
+  --fk-text-heading:var(--fk-primary-800); /* #2D0B84 */
+  --fk-text-link:var(--fk-primary-700); /* #4A13B7 */
+  --fk-text-on-primary:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-text-on-accent:var(--fk-primary-950); /* #130438 */
+  --fk-text-on-inverse:var(--fk-neutral-0); /* #FFFFFF */
+  --fk-primary:var(--fk-primary-700); /* #4A13B7 */
+  --fk-primary-hover:var(--fk-primary-800); /* #2D0B84 */
+  --fk-primary-pressed:var(--fk-primary-900); /* #21025E */
+  --fk-primary-subtle:var(--fk-primary-100); /* #EBE6F7 */
+  --fk-focus-ring:var(--fk-lavender-500); /* #996DF8 */
+  --fk-accent:var(--fk-lime-100); /* #EFFF94 */
+  --fk-accent-hover:var(--fk-lime-200); /* #EAF17D */
+  --fk-accent-strong:var(--fk-lime-400); /* #DAD05A */
+  --fk-accent-2:var(--fk-lavender-400); /* #B294FF */
+  --fk-accent-2-subtle:var(--fk-lavender-100); /* #EEE9FF */
+  --fk-disabled-bg:var(--fk-neutral-100); /* #EDEAF3 */
+  --fk-disabled-fg:var(--fk-neutral-500); /* #827D8D */
+  --fk-success-fg:var(--fk-success-700); /* #006C12 */
+  --fk-success-bg:var(--fk-success-50); /* #F2FFF3 */
+  --fk-success-border:var(--fk-success-200); /* #C3EAC5 */
+  --fk-success-solid:var(--fk-success-600); /* #008816 */
+  --fk-success-icon:var(--fk-success-600); /* #008816 */
+  --fk-success-strong:var(--fk-success-900); /* #125C19 */
+  --fk-error-fg:var(--fk-error-700); /* #970400 */
+  --fk-error-bg:var(--fk-error-50); /* #FFF8F8 */
+  --fk-error-border:var(--fk-error-200); /* #FFD1D0 */
+  --fk-error-solid:var(--fk-error-600); /* #B40706 */
+  --fk-error-icon:var(--fk-error-600); /* #B40706 */
+  --fk-error-strong:var(--fk-error-900); /* #5C1B12 */
+  --fk-warning-fg:var(--fk-warning-700); /* #964700 */
+  --fk-warning-bg:var(--fk-warning-50); /* #FFF8F2 */
+  --fk-warning-border:var(--fk-warning-200); /* #F8D7BD */
+  --fk-warning-solid:var(--fk-warning-600); /* #BD5900 */
+  --fk-warning-icon:var(--fk-warning-600); /* #BD5900 */
+  --fk-warning-strong:var(--fk-warning-900); /* #5C3212 */
+  --fk-info-fg:var(--fk-info-700); /* #00667A */
+  --fk-info-bg:var(--fk-info-50); /* #F2FDFF */
+  --fk-info-border:var(--fk-info-200); /* #C4E5EC */
+  --fk-info-solid:var(--fk-info-600); /* #00809A */
+  --fk-info-icon:var(--fk-info-600); /* #00809A */
+  --fk-info-strong:var(--fk-info-900); /* #124E5C */
+
+  /* ---- Legacy landing tokens, remapped (tokens.css v1) ---- */
+  --fk-heading:var(--fk-text-heading);
+  --fk-ink:var(--fk-text-primary);
+  --fk-body:var(--fk-text-secondary);
+  --fk-muted:var(--fk-text-muted);
+  --fk-focus:var(--fk-focus-ring);
+  --fk-dark:var(--fk-surface-inverse);
+  --fk-lav-50:var(--fk-primary-50); --fk-lav-100:var(--fk-lavender-100); --fk-lav-200:var(--fk-lavender-200); --fk-lav-300:var(--fk-lavender-300);
+}

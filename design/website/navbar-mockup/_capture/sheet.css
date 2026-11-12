@@ -1,0 +1,19 @@
+@import url('../css/fonts.css');
+*{box-sizing:border-box}
+body{margin:0;background:#F7F6FA;font-family:'Mulish',sans-serif;color:#4D485A;-webkit-font-smoothing:antialiased}
+.sheet{padding:48px}
+.eyebrow{font-family:'Poppins';font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#4A13B7;margin:0 0 8px}
+h1{font-family:'Poppins';font-weight:600;font-size:28px;line-height:1.25;color:#2D0B84;margin:0 0 6px}
+.lede{font-size:15px;line-height:1.5;margin:0 0 32px;color:#4D485A}
+.row{margin:0 0 28px}
+.lab{display:flex;align-items:baseline;gap:12px;margin:0 0 10px}
+.lab b{font-family:'Poppins';font-weight:600;font-size:14px;color:#1B132A}
+.lab span{font-size:13px;font-weight:600;color:#6B6677}
+.num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:#EEE9FF;color:#4A13B7;font-family:'Poppins';font-weight:600;font-size:12px}
+.frame{border:1px solid #DCD9E2;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(27,19,42,.04)}
+.frame img{display:block}
+.spec{display:grid;gap:12px 32px;margin-top:8px;padding:20px 24px;border-radius:12px;background:#fff;border:1px solid #DCD9E2}
+.spec h3{grid-column:1/-1;margin:0;font-family:'Poppins';font-weight:600;font-size:14px;color:#2D0B84}
+.spec p{margin:0;font-size:13px;line-height:1.5}
+.spec p b{font-family:'Poppins';font-weight:600;color:#1B132A;font-size:13px}
+.foot{margin-top:28px;display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#6B6677}
