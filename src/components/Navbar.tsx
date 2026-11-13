@@ -24,6 +24,17 @@ const SECTION_IDS = [
   "#early-access",
 ];
 
+/* Sections are not tab stops. tabindex="-1" lets a chosen in-page target take focus
+   when the mobile menu unmounts, so keyboard focus is not dropped on the document. */
+function focusInPageTarget(href: string) {
+  const id = href.startsWith("#") ? href.slice(1) : "";
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!(target instanceof HTMLElement)) return;
+  if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+  target.focus({ preventScroll: true });
+}
+
 function Logo({ className }: { className?: string }) {
   return (
     <Image
@@ -247,7 +258,10 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 aria-current={active === link.href ? "true" : undefined}
-                onClick={() => closeMenu(false)}
+                onClick={() => {
+                  focusInPageTarget(link.href);
+                  closeMenu(false);
+                }}
               >
                 <span>{link.label}</span>
                 <ChevronRight size={20} strokeWidth={2} aria-hidden="true" />
@@ -258,7 +272,10 @@ export function Navbar() {
             <a
               className="btn btn--primary btn--block"
               href="#early-access"
-              onClick={() => closeMenu(false)}
+              onClick={() => {
+                focusInPageTarget("#early-access");
+                closeMenu(false);
+              }}
             >
               Get Early Access
             </a>
