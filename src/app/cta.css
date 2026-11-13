@@ -1,0 +1,183 @@
+/* Final CTA (#early-access) + Footer. Ported verbatim from Rachana's site/css/cta.css (cta-footer-spec v3, approved). */
+/* ===== FamilyKit · Final CTA (#early-access) + Footer · v3
+   Mobile-first. Copy + inline early-access form first in the DOM (phones
+   and tablets read and act first); the Indian family photo follows and
+   fades softly into the brand-purple band via pure alpha (no baked
+   #130438 in the asset). 768–1279 stays stacked so the photo is never
+   squeezed. 1280+: two columns, copy left / photo right.
+   v3 form collects both Email and WhatsApp (with a +91 prefix). The two
+   white pills and the lime button stack on 768 and below; from 1024 up
+   the inputs sit side by side with the full-width lime button beneath.
+   Footer is crisp white #FFFFFF with a 1px #ECE8F5 top divider, using
+   the official full-color familykit-logo@2x.png (same asset as the navbar). */
+
+/* ---------- Final CTA ---------- */
+.cta{position:relative;isolation:isolate;overflow:hidden;padding:64px 0 0;
+  background:
+    radial-gradient(64% 80% at 82% 42%,rgba(153,109,248,.30),transparent 68%),
+    radial-gradient(50% 70% at 18% 20%,rgba(74,19,183,.32),transparent 70%),
+    linear-gradient(135deg,#2D0B84 0%,#3E15A3 60%,#4A13B7 100%)}
+.cta__inner{width:calc(100% - 2*var(--fk-gutter));max-width:var(--fk-container);margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+
+/* --- Copy --- */
+.cta__copy{min-width:0}
+.cta__eyebrow{display:inline-flex;align-items:center;gap:8px;height:30px;margin:0 0 16px;padding:0 12px 0 10px;border-radius:999px;
+  background:rgba(239,255,148,.14);box-shadow:inset 0 0 0 1px rgba(239,255,148,.28);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.8125rem;line-height:1;letter-spacing:.02em;color:#EFFF94}
+.cta__eyebrow svg{flex:none;color:#EFFF94}
+.cta__title{margin:0;font-family:var(--fk-font-heading);font-weight:600;font-size:1.875rem;line-height:1.2;letter-spacing:-.015em;color:#FFFFFF}
+.cta__line{display:block;text-wrap:balance}
+/* Hand-drawn underline, same stroke as Why / How / Security / Uses, but
+   lavender → lime so it reads on the brand-purple band. */
+.cta__mark{color:#EFFF94;padding-bottom:.14em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23996DF8'/%3E%3Cstop offset='1' stop-color='%23EFFF94'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 9.5C52 5.2 108 4 160 5.4c50 1.3 92 3.6 134-.4' fill='none' stroke='url(%23g)' stroke-width='4' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") left bottom/100% .26em no-repeat}
+.cta__lede{margin:16px 0 0;max-width:34rem;font-family:var(--fk-font-body);font-weight:400;font-size:1.0625rem;line-height:1.6;color:#F3F0FF;text-wrap:pretty}
+
+/* --- Early access form (email + WhatsApp) --- */
+.cta__form{margin:28px 0 0;width:100%;max-width:36rem}
+.cta__fields{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.cta__field{position:relative;min-width:0;width:100%}
+.cta__input,.cta__input-wrap{width:100%;min-width:0;min-height:52px;border:0;border-radius:999px;
+  background:#FFFFFF;color:var(--fk-neutral-900);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.0),0 1px 2px rgba(19,4,56,.12),0 12px 28px -20px rgba(19,4,56,.4);
+  transition:box-shadow .18s var(--fk-ease)}
+.cta__input{padding:0 20px;
+  font-family:var(--fk-font-body);font-weight:400;font-size:1rem;line-height:1.4}
+.cta__input::placeholder{color:var(--fk-neutral-600)}
+.cta__input:focus{outline:none}
+.cta__input:focus-visible{outline:3px solid #EFFF94;outline-offset:2px}
+.cta__input[aria-invalid="true"]{box-shadow:inset 0 0 0 2px #F5A8A8,0 1px 2px rgba(19,4,56,.12)}
+.cta__input-wrap{display:flex;align-items:center;padding:0 8px 0 20px}
+.cta__input-wrap:has(.cta__input[aria-invalid="true"]){box-shadow:inset 0 0 0 2px #F5A8A8,0 1px 2px rgba(19,4,56,.12)}
+.cta__input-wrap:focus-within{outline:3px solid #EFFF94;outline-offset:2px}
+.cta__field--whatsapp .cta__input{flex:1;min-width:0;min-height:52px;padding:0 12px;background:transparent;box-shadow:none;border-radius:0}
+.cta__field--whatsapp .cta__input:focus-visible{outline:none}
+.cta__prefix{flex:none;padding:0 12px 0 0;border-right:1px solid #ECE8F5;
+  font-family:var(--fk-font-body);font-weight:600;font-size:1rem;line-height:1;color:var(--fk-neutral-900);pointer-events:none}
+.cta__submit{flex:none;width:100%;min-height:52px;padding:0 22px;border:0;border-radius:999px;background:#EFFF94;color:#130438;
+  font-family:var(--fk-font-heading);font-weight:600;font-size:var(--fk-button-size);line-height:1.2;letter-spacing:0;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;white-space:nowrap;
+  box-shadow:0 1px 2px rgba(19,4,56,.16),0 10px 24px -12px rgba(239,255,148,.55);
+  transition:background-color .18s var(--fk-ease),box-shadow .18s var(--fk-ease),transform .18s var(--fk-ease)}
+.cta__submit svg{flex:none;transition:transform .18s var(--fk-ease)}
+.cta__submit:hover{background:#EAF17D;box-shadow:0 1px 2px rgba(19,4,56,.2),0 14px 28px -12px rgba(239,255,148,.7)}
+.cta__submit:hover svg{transform:translateX(3px)}
+.cta__submit:active{background:#E3E26D;transform:translateY(1px)}
+.cta__submit:focus-visible{outline:3px solid #996DF8;outline-offset:2px}
+.cta__submit:disabled{cursor:default;opacity:.9;transform:none}
+.cta__note{margin:14px 0 0;font-family:var(--fk-font-body);font-weight:400;font-size:.8125rem;line-height:1.5;color:#EDE9FE;text-wrap:balance}
+.cta__error{margin:12px 0 0;font-family:var(--fk-font-body);font-weight:500;font-size:.875rem;line-height:1.5;color:#FFD6D6;text-wrap:pretty}
+.cta__error[hidden]{display:none}
+.cta__confirm{display:flex;align-items:flex-start;gap:10px;margin:0;padding:16px 18px;border-radius:18px;
+  background:rgba(239,255,148,.12);box-shadow:inset 0 0 0 1px rgba(239,255,148,.28);
+  font-family:var(--fk-font-body);font-weight:400;font-size:1rem;line-height:1.55;color:#FFFFFF;text-wrap:pretty}
+.cta__confirm[hidden]{display:none}
+.cta__confirm svg{flex:none;margin-top:2px;color:#EFFF94}
+.cta__form[data-state="success"] .cta__fields,
+.cta__form[data-state="success"] .cta__note,
+.cta__form[data-state="success"] .cta__error{display:none}
+
+/* --- Family photo --- */
+.cta__visual{position:relative;margin:0}
+.cta__visual::before{content:"";position:absolute;z-index:-1;inset:6% 4% 8% 4%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(153,109,248,.40),rgba(74,19,183,.18) 58%,transparent);filter:blur(28px);pointer-events:none}
+.cta__photo{position:relative;margin:0}
+.cta__photo img{width:100%;height:auto;display:block}
+/* The asset already fades to pure alpha over the bottom ~28–30%, so it
+   melts into whatever purple is behind it. No #130438 colour wash. */
+
+/* Crisp vector badges — light glass chips, brand-purple icons. */
+.cta__badge{position:absolute;z-index:2;display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:14px;
+  background:rgba(255,255,255,.94);color:var(--fk-primary-700);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,1),0 1px 2px rgba(19,4,56,.12),0 10px 22px -12px rgba(19,4,56,.5)}
+.cta__badge--shield{top:8%;left:2%}
+.cta__badge--cal{top:22%;right:2%}
+
+/* 360-class phones */
+@media (max-width:374px){
+  .cta__title{font-size:1.75rem}
+  .cta__input,.cta__input-wrap,.cta__field--whatsapp .cta__input,.cta__submit{min-height:48px}
+}
+
+/* Tablet portrait: still stacked, copy first, photo below with the fade */
+@media (min-width:768px){
+  .cta{padding:88px 0 0}
+  .cta__inner{gap:48px;max-width:688px}
+  .cta__title{font-size:2.5rem;line-height:1.15}
+  .cta__lede{font-size:1.125rem;line-height:1.6;margin-top:20px}
+  .cta__form{margin-top:32px}
+  .cta__input,.cta__input-wrap,.cta__field--whatsapp .cta__input{min-height:56px}
+  .cta__input{padding:0 22px;font-size:1.0625rem}
+  .cta__field--whatsapp .cta__input{padding:0 14px}
+  .cta__input-wrap{padding:0 10px 0 22px}
+  .cta__prefix{font-size:1.0625rem;padding-right:14px}
+  .cta__submit{min-height:56px;padding:0 26px;font-size:1rem}
+  .cta__badge{width:48px;height:48px;border-radius:16px}
+  .cta__badge svg{width:22px;height:22px}
+  .cta__badge--shield{top:10%;left:0}
+  .cta__badge--cal{top:20%;right:0}
+}
+
+@media (min-width:1024px){
+  .cta{padding:112px 0 0}
+  .cta__inner{max-width:760px}
+  .cta__lede{font-size:1.125rem}
+  .cta__fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:12px}
+  .cta__submit{grid-column:1 / -1;width:100%}
+}
+
+/* Desktop: two columns, copy left / photo right. Photo is locked to the
+   asset's native 4:3 so the family stays fully in frame. */
+@media (min-width:1280px){
+  .cta{padding:128px 0 0}
+  .cta__inner{max-width:var(--fk-container);
+    grid-template-columns:minmax(0,1fr) minmax(0,560px);
+    gap:64px;align-items:center}
+  .cta__title{font-size:2.5rem;line-height:1.2}
+  .cta__lede{font-size:1.1875rem;max-width:32rem}
+  .cta__form{max-width:none}
+  .cta__badge{width:52px;height:52px;border-radius:18px}
+  .cta__badge svg{width:24px;height:24px}
+  .cta__badge--shield{top:12%;left:0}
+  .cta__badge--cal{top:18%;right:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cta__submit svg,.cta__submit{transition:none}
+}
+
+/* ---------- Footer ---------- */
+.footer{background:#FFFFFF;color:#4D485A;border-top:1px solid #ECE8F5}
+.footer__inner{width:calc(100% - 2*var(--fk-gutter));max-width:var(--fk-container);margin:0 auto;
+  display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding:48px 0 36px}
+.footer__brand{min-width:0;max-width:28rem}
+.footer__logo{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;border-radius:8px}
+.footer__logo img{height:44px;width:auto;display:block}
+.footer__tagline{margin:10px 0 0;font-family:var(--fk-font-body);font-weight:400;font-size:.9375rem;line-height:1.55;color:#4D485A;text-wrap:pretty}
+.footer__links{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin:0;padding:0}
+.footer__links a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 2px;
+  font-family:var(--fk-font-heading);font-weight:500;font-size:.9375rem;line-height:1.2;color:#1B132A;
+  text-decoration:none;border-radius:8px;transition:color .18s var(--fk-ease)}
+.footer__links a:hover{color:#4A13B7}
+.footer__bar{width:calc(100% - 2*var(--fk-gutter));max-width:var(--fk-container);margin:0 auto;
+  display:flex;flex-direction:column;align-items:flex-start;gap:8px;
+  padding:20px 0 28px;border-top:1px solid #ECE8F5}
+.footer__copy,.footer__trust{margin:0;font-family:var(--fk-font-body);font-weight:400;font-size:.8125rem;line-height:1.5;color:#5B556B}
+
+@media (min-width:768px){
+  .footer__inner{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:48px;padding:56px 0 40px}
+  .footer__links{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 8px;max-width:34rem;justify-content:flex-end}
+  .footer__links a{padding:0 12px}
+  .footer__bar{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:22px 0 36px}
+}
+
+@media (min-width:1280px){
+  .footer__inner{padding:64px 0 44px}
+  .footer__links{max-width:none;gap:4px 4px}
+  .footer__links a{padding:0 14px}
+}
+
+/* Visually hidden labels (base.css .sr-only in the mockup; not yet in globals.css). */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
