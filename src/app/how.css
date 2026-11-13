@@ -1,0 +1,182 @@
+/* How it works (#how-it-works). Ported from /workspace/fk-landing/site/css/how.css (Rachana, how-spec v3, Option A). */
+/* ===== FamilyKit · How it works (#how-it-works) · Option A
+   Mobile-first. Base (<768): illustration on top, text below. 768–1279: stacked, wider art.
+   1280+: two columns, art left / text right, art panel stretches to the copy column.
+   2×2 step cards with short explanations + full-width banner.
+   Glass is an accent only: the illustration panel edge + glow, and a light blur on the banner.
+   Option B (title-only horizontal rows) is parked in /workspace/fk-landing/_parked/how-B/. */
+
+.how{position:relative;isolation:isolate;overflow:hidden;padding:56px 0 64px;
+  background:linear-gradient(180deg,#F7F5FF 0%,#F7F5FF 28%,#FFFFFF 100%)}
+.how__inner{width:calc(100% - 2*var(--fk-gutter));max-width:var(--fk-container);margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+
+/* --- Illustration panel (same treatment as Why) --- */
+.how__art{position:relative;margin:0}
+.how__art::before{content:"";position:absolute;z-index:-1;inset:8% -6% -4% -6%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(153,109,248,.32),rgba(153,109,248,.10) 60%,transparent);filter:blur(28px);pointer-events:none}
+.how__panel{position:relative;overflow:hidden;border-radius:28px;background:#EEE9FF;aspect-ratio:5/4;
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 0 0 6px rgba(255,255,255,.45),0 32px 64px -32px rgba(45,11,132,.40),0 12px 24px -18px rgba(45,11,132,.25)}
+.how__panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 30%)}
+.how__panel img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+
+/* --- Copy --- */
+.how__eyebrow{display:inline-flex;align-items:center;height:30px;margin:0 0 16px;padding:0 12px;border-radius:999px;background:var(--fk-lavender-100);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.8125rem;line-height:1;letter-spacing:.02em;color:var(--fk-primary-700)}
+.how__title{margin:0;font-family:var(--fk-font-heading);font-weight:600;font-size:1.875rem;line-height:1.2;letter-spacing:-.015em;color:var(--fk-primary-800)}
+.how__line{display:block;text-wrap:balance}
+.how__mark{color:var(--fk-primary-700);padding-bottom:.14em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%234A13B7'/%3E%3Cstop offset='.42' stop-color='%23996DF8'/%3E%3Cstop offset='.8' stop-color='%23DAD05A'/%3E%3Cstop offset='1' stop-color='%23DAD05A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 9.5C52 5.2 108 4 160 5.4c50 1.3 92 3.6 134-.4' fill='none' stroke='url(%23g)' stroke-width='4' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") left bottom/100% .26em no-repeat}
+.how__lede{margin:16px 0 0;font-family:var(--fk-font-body);font-weight:400;font-size:1.0625rem;line-height:1.6;color:var(--fk-neutral-700);text-wrap:pretty}
+
+/* ===== 2×2 step cards (stack on phones) ===== */
+.how__grid{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:10px;margin:24px 0 0;padding:0}
+.step{display:flex;flex-direction:column;gap:8px;min-width:0;padding:16px 16px 18px;border-radius:18px;
+  background:linear-gradient(160deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.80) 100%);
+  border:1px solid rgba(220,217,226,.85);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,1),0 1px 2px rgba(19,4,56,.04),0 12px 28px -20px rgba(45,11,132,.28)}
+.step__head{display:flex;align-items:center;gap:10px}
+.step__ic{flex:none;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;
+  background:var(--fk-lavender-100);color:var(--fk-primary-700);box-shadow:inset 0 0 0 1px var(--fk-lavender-200)}
+.step__num{display:inline-flex;align-items:center;height:22px;padding:0 10px;border-radius:999px;background:var(--fk-lavender-100);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.6875rem;line-height:1;letter-spacing:.02em;color:var(--fk-primary-700)}
+.step__title{margin:0;font-family:var(--fk-font-heading);font-weight:600;font-size:1rem;line-height:1.3;color:var(--fk-neutral-900);text-wrap:pretty}
+.step__body{margin:0;font-family:var(--fk-font-body);font-weight:400;font-size:.9375rem;line-height:1.5;color:var(--fk-neutral-700);text-wrap:pretty}
+
+/* ===== Full-width closing banner =====
+   Below 768: centered stack only (tile and divider hidden). Four icon+label
+   pills in ONE row, arrows between all of them, banner line centered underneath.
+   Base styles keep that row on one line at 360px with no overflow.
+   768+: the previous-version left chrome returns — a white list-checks tile
+   and a thin vertical divider — then the pills + line stay centered in the
+   remaining space. */
+.how__banner{grid-column:1/-1;position:relative;isolation:isolate;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;
+  margin-top:4px;padding:20px 8px;border-radius:24px;border:1px solid rgba(200,181,255,.75);
+  background:
+    radial-gradient(60% 120% at 100% 0%,rgba(153,109,248,.22),transparent 70%),
+    radial-gradient(50% 120% at 0% 100%,rgba(255,255,255,.9),transparent 70%),
+    linear-gradient(135deg,#EEE9FF 0%,#F4F0FF 55%,#FBFAFF 100%);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 1px 2px rgba(19,4,56,.04),0 24px 48px -32px rgba(45,11,132,.35)}
+.how__banner-ic,.how__banner-rule{display:none}
+.how__banner-copy{display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:12px;width:100%;min-width:0}
+.how__flow{list-style:none;display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;
+  gap:2px;margin:0;padding:0;max-width:100%;min-width:0}
+.how__flow li{display:inline-flex;align-items:center;gap:2px;flex:none;min-width:0}
+.how__pill{display:inline-flex;align-items:center;justify-content:center;gap:2px;
+  height:26px;padding:0 4px;border-radius:999px;background:#fff;color:var(--fk-primary-800);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:11px;line-height:1;letter-spacing:0;
+  white-space:nowrap;
+  box-shadow:inset 0 0 0 1px var(--fk-lavender-200),0 4px 12px -8px rgba(45,11,132,.3)}
+.how__pill svg{flex:none;width:12px;height:12px;color:var(--fk-primary-700)}
+.how__arrow{flex:none;width:8px;height:8px;color:var(--fk-lavender-600)}
+.how__banner-text{margin:0;width:100%;font-family:var(--fk-font-body);font-weight:400;
+  font-size:13.5px;line-height:1.5;color:var(--fk-neutral-700);text-align:center;text-wrap:pretty}
+
+/* 390–429: still one tight row, a little more breathing room. */
+@media (min-width:390px){
+  .how__banner{padding:22px 10px}
+  .how__flow,.how__flow li{gap:3px}
+  .how__pill{padding:0 5px}
+  .how__arrow{width:10px;height:10px}
+  .how__banner-text{font-size:14px}
+}
+
+/* 480–767: larger pills, still a single unwrapping row. Starts at 480 so 430-wide phones keep the tight row. */
+@media (min-width:480px){
+  .how__banner{padding:24px 16px}
+  .how__banner-copy{gap:14px}
+  .how__flow,.how__flow li{gap:4px}
+  .how__pill{height:28px;padding:0 8px;font-size:12px;gap:3px}
+  .how__pill svg{width:14px;height:14px}
+  .how__arrow{width:12px;height:12px}
+}
+
+/* 360-class phones: slightly smaller heading only. Pill sizes stay at the 360-safe base. */
+@media (max-width:374px){
+  .how__title{font-size:1.75rem}
+}
+
+/* Tablet portrait: stacked, art 4:3 on top */
+@media (min-width:768px){
+  .how{padding:88px 0 96px}
+  .how__inner{gap:48px;max-width:688px}
+  .how__panel{aspect-ratio:4/3;border-radius:32px}
+  .how__panel img{object-position:50% 42%}
+  .how__title{font-size:2.5rem;line-height:1.15}
+  .how__lede{font-size:1.125rem}
+  .how__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:28px}
+  .step{padding:18px 20px 20px;border-radius:20px;gap:10px}
+  .step__ic{width:44px;height:44px;border-radius:14px}
+  .step__title{font-size:1.0625rem}
+  .step__body{font-size:.9375rem}
+  /* 688px inner: 20px pad + 60px tile + 16px gap + 1px rule + 16px gap leaves
+     555px for the 548px pill row (7px slack). Horizontal pad is tighter than
+     40px so the row never overflows. */
+  .how__banner{margin-top:0;padding:32px 20px;border-radius:28px;gap:16px;
+    flex-direction:row;align-items:center;text-align:center;
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .how__banner-ic{flex:none;display:inline-flex;align-items:center;justify-content:center;
+    width:60px;height:60px;border-radius:18px;background:#fff;color:var(--fk-primary-700);
+    box-shadow:inset 0 0 0 1px var(--fk-lavender-200),0 6px 16px -10px rgba(45,11,132,.35)}
+  .how__banner-ic svg{width:28px;height:28px}
+  .how__banner-rule{flex:none;display:block;width:1px;height:64px;
+    background:linear-gradient(180deg,transparent,var(--fk-lavender-300) 20%,var(--fk-lavender-300) 80%,transparent)}
+  .how__banner-copy{flex:1;width:auto;gap:16px}
+  .how__flow,.how__flow li{gap:8px}
+  .how__pill{height:36px;padding:0 16px;font-size:.875rem;gap:8px;letter-spacing:.01em}
+  .how__pill svg{width:16px;height:16px}
+  .how__arrow{width:16px;height:16px}
+  .how__banner-text{font-size:1.0625rem;line-height:1.6;text-wrap:balance}
+}
+
+/* 1024 stays stacked: a short art column beside the 2×2 grid would crop the family or leave empty sky. */
+@media (min-width:1024px){
+  .how{padding:112px 0 120px}
+  .how__inner{max-width:760px}
+  .how__banner{padding:32px;gap:28px}
+}
+
+/* Desktop (1280+): two columns. Art panel stretches to the copy column. Banner spans both. */
+@media (min-width:1280px){
+  .how{padding:128px 0 136px}
+  /* v15: content left / art right (founder: alternate sides Why L · How R · Uses L · Security R). DOM order unchanged. */
+  .how__inner{max-width:var(--fk-container);grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:64px;align-items:stretch}
+  .how__art{display:flex;grid-column:2;grid-row:1}
+  .how__panel{flex:1;aspect-ratio:auto;
+    background:radial-gradient(55% 30% at 78% 10%,rgba(153,109,248,.30),transparent 72%),radial-gradient(45% 26% at 18% 6%,rgba(255,255,255,.95),transparent 70%),#EEE9FF}
+  .how__panel img{position:absolute;right:0;bottom:0;width:110%;max-width:none;height:auto;object-fit:initial;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 7%);mask-image:linear-gradient(180deg,transparent 0,#000 7%)}
+  .how__copy{align-self:center;grid-column:1;grid-row:1}
+  .how__title{font-size:2.5rem;line-height:1.2}
+  .how__lede{font-size:1.125rem}
+  .how__banner{margin-top:0;padding:36px 48px;gap:32px}
+  .how__banner-copy{gap:18px}
+  .how__banner-text{font-size:1.125rem}
+  .step{min-height:0}
+}
+
+/* v18 (founder): below 1280 every section reads eyebrow + heading (+ intro) → illustration → cards → banner.
+   The copy wrapper dissolves so its head and card list become grid items beside the art, then `order` places them.
+   Spacing: the grid gap is replaced by explicit margins (24px phones / 28px from 768 around the art); the
+   cards → banner distance keeps its previous value. 1280+ is untouched (the wrapper is a normal box again). */
+@media (max-width:1279.98px){
+  .how__inner{row-gap:0}
+  .how__copy{display:contents}
+  .how__head{order:1}
+  .how__art{order:2;margin:24px 0}
+  .how__grid{order:3;margin-top:0}
+  .how__banner{order:4;margin-top:40px}
+}
+@media (min-width:768px) and (max-width:1279.98px){
+  .how__art{margin:28px 0}
+  .how__banner{margin-top:48px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .how__banner{-webkit-backdrop-filter:none;backdrop-filter:none}
+}

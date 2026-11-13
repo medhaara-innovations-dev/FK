@@ -1,0 +1,205 @@
+/* Hero (#top). Ported from /workspace/fk-landing/site/css/hero.css (Rachana, hero-spec v3). .btn/.btn--secondary live in globals.css. */
+/* ===== FamilyKit Hero (#top) =====
+   Mobile-first. Breakpoints: base (<768), 768, 1024, 1280. v3: three quiet points under the buttons; one premium phone (no floating cards). */
+.hero{position:relative;isolation:isolate;overflow:hidden;
+  /* v2 background: lavender wash + soft #996DF8 glow behind the floating navbar (same as fk-web) */
+  background:
+    radial-gradient(920px 520px at 82% 0%, rgba(153,109,248,.34), transparent 64%),
+    radial-gradient(680px 400px at 8% 10%, #EEE9FF, transparent 60%),
+    linear-gradient(180deg,#EEE9FF 0%,#F7F5FF 38%,#FFFFFF 100%);
+  padding:calc(var(--fk-nav-inset) + var(--fk-nav-h) + 28px) 0 24px}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.hero::before{width:420px;height:420px;top:-80px;right:8%;background:rgba(153,109,248,.36);filter:blur(40px)}
+.hero::after{width:360px;height:360px;top:40px;left:4%;background:rgba(238,233,255,.95);filter:blur(30px)}
+
+.hero__inner{width:calc(100% - 2*var(--fk-gutter));max-width:var(--fk-container);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+
+/* --- Copy --- */
+.hero__eyebrow{display:inline-flex;align-items:center;gap:8px;height:34px;margin:0 0 20px;padding:0 14px 0 12px;border-radius:999px;
+  border:1px solid var(--fk-accent-strong);background:var(--fk-accent);
+  box-shadow:0 1px 2px rgba(19,4,56,.04),inset 0 1px 0 rgba(255,255,255,.6);
+  font-family:var(--fk-font-heading);font-weight:500;font-size:.8125rem;line-height:1;color:var(--fk-text-on-accent)}
+/* v12: brand lime badge (#EFFF94 fill, #DAD05A border, #130438 text and icon, 17.6:1). The one lime element in the hero copy. */
+.hero__eyebrow svg{color:var(--fk-text-on-accent);flex:none}
+.hero__title{margin:0;font-family:var(--fk-font-heading);font-weight:700;font-size:2.75rem;line-height:1.1;letter-spacing:-.015em;color:var(--fk-primary-800);text-wrap:balance}
+.hero__accent{color:var(--fk-primary-700);background:linear-gradient(90deg,#4A13B7 0%,#7543C7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero__lede{margin:16px 0 0;max-width:30rem;font-family:var(--fk-font-body);font-weight:400;font-size:1.0625rem;line-height:1.6;color:var(--fk-neutral-700);text-wrap:pretty}
+.hero__actions{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:28px}
+.btn--lg{min-height:56px;padding:0 28px;font-size:1rem}
+.hero__cta svg{transition:transform .18s var(--fk-ease)}
+.hero__cta:hover svg{transform:translateX(3px)}
+.hero__secondary svg{transition:transform .18s var(--fk-ease)}
+.hero__secondary:hover svg{transform:translateY(2px)}
+/* v3: three quiet points (replace the AES-256 / data-in-India lines, which move to Security & Privacy) */
+.hero__points{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:28px 0 0;padding:0}
+.hero__points li{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;
+  font-family:var(--fk-font-body);font-weight:600;font-size:.8125rem;line-height:1.3;color:var(--fk-neutral-700)}
+.hero__point-ic{flex:none;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;
+  background:var(--fk-lavender-100);box-shadow:inset 0 0 0 1px var(--fk-lavender-200);color:var(--fk-primary-700)}
+
+/* --- Visual stage --- */
+.hero__visual{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 0 8px}
+.hero__glow{position:absolute;left:50%;top:50%;width:480px;height:600px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(closest-side,rgba(153,109,248,.62) 0%,rgba(120,70,230,.26) 55%,transparent 100%);filter:blur(28px);z-index:0}
+.hero__ring{position:absolute;left:50%;top:50%;width:520px;height:520px;transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+  border:1px solid rgba(153,109,248,.20);background:radial-gradient(closest-side,rgba(255,255,255,0) 82%,rgba(255,255,255,.35) 100%)}
+
+/* Phone (CSS-built, sample data). Thin bezel, dynamic island, titanium-violet edge. */
+.phone{--pw:340px;--ph:712px;position:relative;z-index:1;width:var(--pw);height:var(--ph);padding:9px;border-radius:52px;
+  background:linear-gradient(145deg,#4B3A78 0%,#1E1240 18%,#120A2B 50%,#22164A 82%,#4B3A78 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.14),inset 0 0 0 3px #0B0620,inset 0 1px 0 4px rgba(255,255,255,.05),
+    0 1px 0 rgba(255,255,255,.4),
+    0 60px 90px -36px rgba(45,11,132,.55),0 30px 50px -28px rgba(19,4,56,.45),0 0 0 1px rgba(19,4,56,.08)}
+.phone__btn{position:absolute;width:3px;border-radius:2px;background:linear-gradient(90deg,#2A1D52,#4B3A78);z-index:-1}
+.phone__btn--a{left:-3px;top:150px;height:30px}
+.phone__btn--b{left:-3px;top:200px;height:56px}
+.phone__btn--c{right:-3px;top:220px;height:84px}
+.phone__screen{position:relative;height:100%;display:flex;flex-direction:column;overflow:hidden;border-radius:43px;
+  background:linear-gradient(180deg,#F1ECFF 0%,#F7F5FF 30%,#F7F5FF 100%);font-family:var(--fk-font-body);color:var(--fk-neutral-900)}
+
+.app__status{position:relative;display:flex;justify-content:space-between;align-items:center;height:48px;padding:4px 26px 0 32px;flex:none}
+.app__time{font-family:var(--fk-font-heading);font-weight:600;font-size:.875rem;letter-spacing:-.01em}
+.app__island{position:absolute;left:50%;top:11px;width:96px;height:28px;margin-left:-48px;border-radius:999px;background:#05020F}
+.app__status-icons{display:flex;align-items:center;gap:5px;color:var(--fk-neutral-900)}
+.app__bars{display:flex;gap:2px;align-items:flex-end}
+.app__bars i{display:block;width:3px;border-radius:1px;background:currentColor}
+.app__bars i:nth-child(1){height:4px}.app__bars i:nth-child(2){height:6px}.app__bars i:nth-child(3){height:8px}.app__bars i:nth-child(4){height:10px}
+.app__batt{position:relative;display:inline-block;width:22px;height:11px;border-radius:3.5px;border:1.2px solid rgba(27,19,42,.45);padding:1.2px}
+.app__batt::after{content:"";position:absolute;right:-3.5px;top:3px;width:1.5px;height:4px;border-radius:0 1px 1px 0;background:rgba(27,19,42,.45)}
+.app__batt i{display:block;width:80%;height:100%;border-radius:1.5px;background:currentColor}
+
+.app__head{display:flex;align-items:center;gap:10px;padding:8px 18px 4px;flex:none}
+.app__head img{width:34px;height:auto}
+.app__head div{flex:1;min-width:0}
+.app__hi{margin:0;font-weight:600;font-size:.75rem;line-height:1.3;color:var(--fk-neutral-600)}
+.app__name{margin:0;font-family:var(--fk-font-heading);font-weight:600;font-size:1.0625rem;line-height:1.25;color:var(--fk-primary-800)}
+.app__bell{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--fk-neutral-100);color:var(--fk-neutral-800)}
+
+.app__body{flex:1;min-height:0;padding:0 14px}
+.app__h{margin:14px 4px 8px;font-family:var(--fk-font-heading);font-weight:600;font-size:.875rem;line-height:1.2;color:var(--fk-neutral-900)}
+.app__h--urgent{display:flex;align-items:center;gap:6px;color:#C62828}
+.app__h--urgent svg{flex:none}
+/* v12: lime "AI" tag on the Ask AI label. Flex row + a 16px tag shorter than the label's line box, so no height change. */
+.app__h--ai{display:flex;align-items:center;gap:6px}
+.ai__tag{flex:none;display:inline-flex;align-items:center;justify-content:center;height:16px;padding:0 6px;border-radius:999px;
+  border:1px solid var(--fk-accent-strong);background:var(--fk-accent);color:var(--fk-text-on-accent);
+  font-family:var(--fk-font-heading);font-weight:700;font-size:.6875rem;line-height:1;letter-spacing:.02em}
+.acard{background:#fff;border-radius:18px;border:1px solid rgba(237,234,243,.9);box-shadow:0 1px 2px rgba(19,4,56,.04),0 6px 16px -10px rgba(45,11,132,.18)}
+.app__ic{flex:none;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:12px;background:var(--fk-lavender-100);color:var(--fk-primary-700)}
+.app__chip{flex:none;padding:3px 9px;border-radius:999px;background:var(--fk-lavender-100);box-shadow:inset 0 0 0 1px var(--fk-lavender-200);
+  font-style:normal;font-family:var(--fk-font-heading);font-weight:600;font-size:.75rem;line-height:1.3;color:var(--fk-primary-700);white-space:nowrap}
+.app__chip--urgent{background:#FDECEC;box-shadow:inset 0 0 0 1px #F5C2C2;color:#C62828}
+
+/* Needs attention */
+.acard--attn{padding:12px;box-shadow:inset 3px 0 0 #E57373,0 1px 2px rgba(19,4,56,.04),0 6px 16px -10px rgba(45,11,132,.18)}
+.attn__top{display:flex;align-items:center;gap:10px}
+.attn__txt{flex:1;min-width:0}
+.attn__meta{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.attn__kicker{font-weight:600;font-size:.75rem;line-height:1.3;color:var(--fk-neutral-600)}
+.attn__title{display:block;margin-top:2px;font-family:var(--fk-font-heading);font-weight:600;font-size:.9375rem;line-height:1.3;color:var(--fk-neutral-900)}
+.attn__adv{display:flex;align-items:center;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid var(--fk-neutral-100)}
+.attn__avatar{flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(140deg,var(--fk-lavender-200),var(--fk-lavender-300));font-family:var(--fk-font-heading);font-weight:600;font-size:.75rem;letter-spacing:.02em;color:var(--fk-primary-800)}
+.attn__adv div{flex:1;min-width:0}
+.attn__adv small{display:block;font-weight:600;font-size:.75rem;line-height:1.3;color:var(--fk-neutral-600)}
+.attn__adv b{display:block;font-family:var(--fk-font-heading);font-weight:600;font-size:.8125rem;line-height:1.3;color:var(--fk-neutral-900)}
+.attn__call{flex:none;display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 12px;border-radius:999px;border:1px solid var(--fk-lavender-300);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.75rem;color:var(--fk-primary-700)}
+.attn__btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.abtn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:36px;padding:0 8px;border-radius:999px;border:1px solid var(--fk-neutral-200);background:#fff;
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.75rem;white-space:nowrap;color:var(--fk-primary-700)}
+.abtn--primary{border-color:var(--fk-primary-700);background:var(--fk-primary-700);color:#fff}
+
+/* Upcoming */
+.acard--row{display:flex;align-items:center;gap:10px;padding:10px 10px 10px 12px}
+.acard--row div{flex:1;min-width:0}
+.acard--row b{display:block;font-family:var(--fk-font-heading);font-weight:600;font-size:.875rem;line-height:1.3;color:var(--fk-neutral-900)}
+.acard--row small{display:block;margin-top:1px;font-weight:600;font-size:.75rem;line-height:1.35;color:var(--fk-neutral-600)}
+.acard__chev{flex:none;color:var(--fk-neutral-500)}
+
+/* Ask AI (compact chat) */
+.acard--ai{padding:10px 12px 12px}
+.ai__q{margin:0 0 0 auto;width:fit-content;max-width:88%;padding:7px 12px;border-radius:14px 14px 4px 14px;background:var(--fk-primary-700);
+  font-weight:600;font-size:.75rem;line-height:1.35;color:#fff;text-wrap:balance}
+.ai__a{display:flex;align-items:center;gap:8px;margin-top:8px}
+.ai__spark{flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--fk-lavender-100);color:var(--fk-primary-700)}
+.ai__a b{font-family:var(--fk-font-heading);font-weight:600;font-size:.875rem;line-height:1.2;color:var(--fk-neutral-900)}
+.ai__link{margin-left:auto;display:inline-flex;align-items:center;gap:2px;font-family:var(--fk-font-heading);font-weight:600;font-size:.75rem;color:var(--fk-primary-700)}
+.ai__input{display:none;align-items:center;gap:8px;margin-top:10px;height:34px;padding:0 4px 0 12px;border-radius:999px;background:var(--fk-lavender-50);border:1px solid var(--fk-neutral-100)}
+.ai__input span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;font-size:.75rem;color:var(--fk-neutral-600)}
+.ai__input i{flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--fk-primary-700);color:#fff}
+
+/* Bottom nav */
+.app__tabbar{flex:none;display:grid;position:relative;grid-template-columns:1fr 1fr 12px 1fr 1fr;align-items:end;height:80px;padding:0 4px 26px;background:#fff;border-top:1px solid var(--fk-neutral-100)}
+.app__tabbar span{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;font-family:var(--fk-font-heading);font-weight:500;font-size:.6875rem;line-height:1.2;letter-spacing:-.01em;white-space:nowrap;color:var(--fk-neutral-600)}
+.app__tabbar span.is-on{color:var(--fk-primary-700)}
+.app__plus b{position:absolute;left:50%;top:-20px;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;margin-left:-24px;border-radius:50%;background:var(--fk-primary-700);color:#fff;
+  box-shadow:0 0 0 4px #fff,0 8px 18px -6px rgba(74,19,183,.55)}
+.app__home-ind{position:absolute;left:50%;bottom:8px;width:120px;height:4px;margin-left:-60px;border-radius:999px;background:var(--fk-neutral-900)}
+
+/* ===== 768+ (tablet portrait): single column, centred phone ===== */
+@media (min-width:768px){
+  .hero{padding-top:calc(var(--fk-nav-inset) + var(--fk-nav-h) + 56px);padding-bottom:72px}
+  .hero__inner{max-width:640px;gap:48px}
+  .hero__title{font-size:3.5rem;line-height:1.08}
+  .hero__lede{font-size:1.1875rem}
+  .hero__actions{flex-direction:row;align-items:center;gap:12px}
+  .hero__secondary{width:auto}
+  .hero__points{display:flex;gap:28px;margin-top:32px}
+  .hero__points li{flex-direction:row;gap:10px;text-align:left;font-size:.875rem}
+  .phone{--pw:364px;--ph:752px}
+  /* roomier phone from 768: larger cards, input pill shown */
+  .app__h{margin:18px 4px 10px;font-size:.9375rem}
+  .acard--attn{padding:14px}
+  .attn__title{font-size:1rem}
+  .attn__adv{margin-top:12px;padding-top:12px}
+  .attn__btns{margin-top:14px}
+  .abtn{height:38px;font-size:.8125rem}
+  .acard--row{padding:12px 12px 12px 14px}
+  .acard--row b{font-size:.9375rem}
+  .acard--ai{padding:12px 14px 14px}
+  .ai__q{padding:8px 12px}
+  .ai__a{margin-top:10px}
+  .ai__input{display:flex;margin-top:12px;height:36px}
+}
+/* ===== 1024+ : two columns, text left / phone right ===== */
+@media (min-width:1024px){
+  .hero{padding-top:calc(var(--fk-nav-inset) + var(--fk-nav-h) + 20px);padding-bottom:20px}
+  .hero__inner{max-width:var(--fk-container);grid-template-columns:minmax(0,1fr) 440px;align-items:center;gap:40px}
+  .hero__visual{padding:0}
+  .hero__points{gap:20px}
+}
+/* ===== 1280+ (design width 1440, content 1200) ===== */
+@media (min-width:1280px){
+  .hero__inner{grid-template-columns:minmax(0,600px) 1fr;gap:48px}
+  .hero__title{font-size:4.25rem;line-height:1.06}
+  .hero__lede{font-size:1.25rem;max-width:31rem}
+  .hero__eyebrow{margin-bottom:24px}
+  .hero__actions{margin-top:36px}
+  .hero__points{gap:32px;margin-top:40px}
+  .phone{--pw:370px;--ph:762px}
+}
+
+/* ===== v8 (founder, 12 Nov): smaller phone, scaled as a whole =====
+   CSS zoom scales the phone and everything inside it proportionally (its layout box too, so the hero gets shorter).
+   1024+: --phone-z .8 (founder's "about 20%"), a pure proportional scale, so the red Needs attention card keeps its exact
+   proportions. 768–1023 (stacked): --phone-z .9, with a text floor so nothing renders under 11px.
+   Phones (<768): unchanged (1). At 306px wide the bottom-nav labels can't stay at 11px without "Pay & Renew" hitting the screen edge.
+   The glow and ring behind the phone shrink by the same factor. */
+.hero__visual{--phone-z:1}
+.phone{zoom:var(--phone-z)}
+.hero__glow{width:calc(480px * var(--phone-z));height:calc(600px * var(--phone-z))}
+.hero__ring{width:calc(520px * var(--phone-z));height:calc(520px * var(--phone-z))}
+/* v16: on phones the 520px ring sat almost entirely off-screen or behind the phone; fit it to the viewport
+   (4px inset each side) so its edges, and the animated arc + orbit, show beside the phone. Decorative, absolutely positioned. */
+@media (max-width:767px){ .hero__ring{width:min(520px, calc(100vw - 8px));height:min(520px, calc(100vw - 8px))} }
+@media (max-width:1023px){
+  .app__hi,.app__chip,.attn__kicker,.attn__adv small,.attn__avatar,.attn__call,.abtn,.acard--row small,.ai__q,.ai__link,.ai__input span,.attn__adv b{
+    font-size:max(var(--fs-base,.75rem), calc(11px / var(--phone-z)))}
+  .attn__adv b{--fs-base:.8125rem}
+  .app__tabbar span{font-size:max(.6875rem, calc(11px / var(--phone-z)))}
+  .ai__tag{font-size:max(.6875rem, calc(11px / var(--phone-z)));height:max(16px, calc(16px / var(--phone-z)))}
+}
+@media (min-width:768px) and (max-width:1023px){ .hero__visual{--phone-z:.9} .abtn{--fs-base:.8125rem} }
+@media (min-width:1024px){ .hero__visual{--phone-z:.8} }

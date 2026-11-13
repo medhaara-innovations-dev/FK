@@ -1,0 +1,191 @@
+/* Security & Privacy (#security). Ported from /workspace/fk-landing/site/css/security.css (Rachana, security-spec v2). */
+/* ===== FamilyKit · Security & Privacy (#security) · v2
+   Mobile-first. Copy (eyebrow, heading, four cards with short explanations)
+   comes first in the DOM, so phones and tablets read the promises first; the
+   illustration follows; the commitment banner is always last, at the bottom
+   of the section. 768–1279 stays stacked (same reason as Why/How: a short art
+   column would crop the family or the shield). 1280+: two columns, art left /
+   text right, via grid-template-areas so the DOM order does not change; the
+   banner spans both columns. Cards use the Why/How glass-white surface, with
+   a Mulish one-line explanation under each title. The closing banner matches
+   how__banner, with a right-side Privacy Policy pill. Glass is an accent only:
+   the illustration panel's light edge + glow, and a light blur on the banner.
+   The only clickable control in the section is the Privacy Policy pill. */
+
+.security{position:relative;isolation:isolate;overflow:hidden;padding:56px 0 64px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#F7F5FF 16%,#F4F0FF 100%)}
+.security__inner{width:calc(100% - 2*var(--fk-gutter));max-width:var(--fk-container);margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+
+/* --- Illustration panel (same treatment as Why / How) --- */
+.security__art{position:relative;margin:0}
+.security__art::before{content:"";position:absolute;z-index:-1;inset:8% -6% -4% -6%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(153,109,248,.32),rgba(153,109,248,.10) 60%,transparent);filter:blur(28px);pointer-events:none}
+.security__panel{position:relative;overflow:hidden;border-radius:28px;background:#EEE9FF;aspect-ratio:5/4;
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 0 0 6px rgba(255,255,255,.45),0 32px 64px -32px rgba(45,11,132,.40),0 12px 24px -18px rgba(45,11,132,.25)}
+.security__panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 30%)}
+/* Subjects span ~31–95% of the art. A 5:4 cover sees ~60% of the height; 80% object-position keeps heads and almost all of the folders. */
+.security__panel img{width:100%;height:100%;object-fit:cover;object-position:50% 80%}
+
+/* --- Copy --- */
+.security__eyebrow{display:inline-flex;align-items:center;gap:8px;height:30px;margin:0 0 16px;padding:0 12px 0 10px;border-radius:999px;background:var(--fk-lavender-100);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.8125rem;line-height:1;letter-spacing:.02em;color:var(--fk-primary-700)}
+.security__eyebrow svg{flex:none;color:var(--fk-primary-700)}
+.security__title{margin:0;font-family:var(--fk-font-heading);font-weight:600;font-size:1.875rem;line-height:1.2;letter-spacing:-.015em;color:var(--fk-primary-800)}
+.security__line{display:block;text-wrap:balance}
+/* Same hand-drawn underline as How's "Smart with AI." and Why's "information is scattered." */
+.security__mark{color:var(--fk-primary-700);padding-bottom:.14em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%234A13B7'/%3E%3Cstop offset='.42' stop-color='%23996DF8'/%3E%3Cstop offset='.8' stop-color='%23DAD05A'/%3E%3Cstop offset='1' stop-color='%23DAD05A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 9.5C52 5.2 108 4 160 5.4c50 1.3 92 3.6 134-.4' fill='none' stroke='url(%23g)' stroke-width='4' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") left bottom/100% .26em no-repeat}
+
+/* Promise cards: icon tile left, title + short Mulish explanation. Equal heights. Static. */
+.security__list{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:8px;margin:24px 0 0;padding:0}
+.promise{display:flex;align-items:flex-start;gap:14px;padding:12px 16px 12px 10px;border-radius:18px;
+  background:linear-gradient(160deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.80) 100%);
+  border:1px solid rgba(220,217,226,.85);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,1),0 1px 2px rgba(19,4,56,.04),0 12px 28px -20px rgba(45,11,132,.28)}
+.promise__ic{flex:none;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;margin-top:1px;
+  background:var(--fk-lavender-100);color:var(--fk-primary-700);box-shadow:inset 0 0 0 1px var(--fk-lavender-200)}
+.promise__copy{min-width:0;display:flex;flex-direction:column;gap:4px;padding-top:1px}
+.promise__title{margin:0;font-family:var(--fk-font-heading);font-weight:600;font-size:.9375rem;line-height:1.35;color:var(--fk-neutral-900);text-wrap:pretty}
+.promise__body{margin:0;font-family:var(--fk-font-body);font-weight:400;font-size:.9375rem;line-height:1.5;color:var(--fk-neutral-700);text-wrap:pretty}
+
+/* ===== Full-width closing commitment banner =====
+   Below 768: centered stack only (tile and divider hidden), matching the
+   founder's mobile preference from How it works. Title, subtitle, then a
+   centered Privacy Policy pill (min-height 44px).
+   768+: left chrome returns — a white shield-check tile and a thin vertical
+   divider — then the commitment text, with the pill pushed to the right. */
+.security__banner{grid-column:1/-1;position:relative;isolation:isolate;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;
+  margin-top:4px;padding:24px 20px;border-radius:24px;border:1px solid rgba(200,181,255,.75);
+  background:
+    radial-gradient(60% 120% at 100% 0%,rgba(153,109,248,.22),transparent 70%),
+    radial-gradient(50% 120% at 0% 100%,rgba(255,255,255,.9),transparent 70%),
+    linear-gradient(135deg,#EEE9FF 0%,#F4F0FF 55%,#FBFAFF 100%);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 1px 2px rgba(19,4,56,.04),0 24px 48px -32px rgba(45,11,132,.35)}
+.security__banner-ic,.security__banner-rule{display:none}
+.security__banner-copy{display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:6px;width:100%;min-width:0}
+.security__banner-title{margin:0;font-family:var(--fk-font-heading);font-weight:600;
+  font-size:1.0625rem;line-height:1.3;color:var(--fk-primary-800);text-wrap:balance}
+.security__banner-text{margin:0;width:100%;font-family:var(--fk-font-body);font-weight:400;
+  font-size:.9375rem;line-height:1.5;color:var(--fk-neutral-700);text-align:center;text-wrap:pretty}
+.security__banner-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:none;
+  min-height:44px;padding:0 20px 0 22px;border-radius:999px;background:#fff;color:var(--fk-primary-800);
+  font-family:var(--fk-font-heading);font-weight:600;font-size:.9375rem;line-height:1.2;letter-spacing:0;
+  text-decoration:none;white-space:nowrap;
+  box-shadow:inset 0 0 0 1px var(--fk-lavender-200),0 1px 2px rgba(19,4,56,.04),0 8px 20px -12px rgba(45,11,132,.35);
+  transition:transform .18s var(--fk-ease),box-shadow .18s var(--fk-ease),color .18s var(--fk-ease),background-color .18s var(--fk-ease)}
+.security__banner-btn:hover{transform:translateY(-1px);color:var(--fk-primary-900);
+  box-shadow:inset 0 0 0 1px var(--fk-lavender-400),0 1px 2px rgba(19,4,56,.06),0 12px 24px -12px rgba(45,11,132,.45)}
+.security__banner-btn:active{transform:translateY(0);color:var(--fk-primary-900);
+  box-shadow:inset 0 0 0 1px var(--fk-lavender-400),0 1px 2px rgba(19,4,56,.08)}
+.security__banner-btn svg{flex:none;color:currentColor}
+
+/* 360-class phones */
+@media (max-width:374px){
+  .security__title{font-size:1.75rem}
+  .promise{gap:12px;padding-right:14px}
+}
+
+/* Tablet portrait: stacked, copy first, art 5:4 below, banner at the bottom */
+@media (min-width:768px){
+  .security{padding:88px 0 96px}
+  .security__inner{gap:48px;max-width:688px}
+  /* 5:4 (not 4:3) so the taller family + shield + folders still fit. */
+  .security__panel{aspect-ratio:5/4;border-radius:32px}
+  .security__panel img{object-position:50% 80%}
+  .security__title{font-size:2.5rem;line-height:1.15}
+  .security__list{gap:10px;margin-top:28px}
+  .promise{gap:16px;padding:14px 20px 14px 12px;border-radius:20px}
+  .promise__ic{width:44px;height:44px;border-radius:14px;margin-top:2px}
+  .promise__title{font-size:1.0625rem}
+  /* 688px inner: 20px pad + 60px tile + 16px gap + 1px rule + 16px gap leaves
+     555px for the title/subtitle + the Privacy Policy pill. Title may wrap. */
+  .security__banner{margin-top:0;padding:28px 20px;border-radius:28px;gap:16px;
+    flex-direction:row;align-items:center;text-align:left;
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .security__banner-ic{flex:none;display:inline-flex;align-items:center;justify-content:center;
+    width:60px;height:60px;border-radius:18px;background:#fff;color:var(--fk-primary-700);
+    box-shadow:inset 0 0 0 1px var(--fk-lavender-200),0 6px 16px -10px rgba(45,11,132,.35)}
+  .security__banner-ic svg{width:28px;height:28px}
+  .security__banner-rule{flex:none;display:block;width:1px;height:64px;
+    background:linear-gradient(180deg,transparent,var(--fk-lavender-300) 20%,var(--fk-lavender-300) 80%,transparent)}
+  .security__banner-copy{flex:1;width:auto;min-width:0;align-items:flex-start;text-align:left;gap:6px}
+  /* 17px (not 18px) so "Your privacy is our commitment" stays on one line in the ~294px copy column. */
+  .security__banner-title{font-size:1.0625rem;line-height:1.3}
+  .security__banner-text{font-size:1rem;line-height:1.5;text-align:left;text-wrap:pretty}
+  .security__banner-btn{margin-left:auto}
+}
+
+/* 1024 stays stacked: a ~400px art column next to the cards would crop the shield or leave empty sky. */
+@media (min-width:1024px){
+  .security{padding:112px 0 120px}
+  .security__inner{max-width:760px}
+  .security__banner{padding:32px;gap:24px}
+  .security__banner-title{font-size:1.125rem}
+  .security__banner-text{font-size:1.0625rem;line-height:1.6}
+}
+
+/* Desktop (1280+): two columns, art left / text right. Banner spans both.
+   Art is locked to the illustration's native 3:4 (520 × 693) so the family,
+   shield and folders stay fully in frame with no crop. The copy column is
+   shorter (~522) and sits vertically centred against the art. */
+@media (min-width:1280px){
+  .security{padding:128px 0 136px}
+  .security__inner{max-width:var(--fk-container);
+    /* v15: content left / art right (founder: alternate sides Why L · How R · Uses L · Security R). */
+    grid-template-columns:minmax(0,1fr) minmax(0,520px);
+    grid-template-areas:"copy art" "banner banner";
+    gap:64px;align-items:center}
+  .security__art{grid-area:art}
+  .security__copy{grid-area:copy}
+  .security__banner{grid-area:banner;margin-top:0;padding:32px 40px;gap:24px;align-self:stretch}
+  .security__panel{aspect-ratio:3/4;
+    background:radial-gradient(55% 30% at 78% 10%,rgba(153,109,248,.30),transparent 72%),radial-gradient(45% 26% at 18% 6%,rgba(255,255,255,.95),transparent 70%),#EEE9FF}
+  .security__panel img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+  .security__title{font-size:2.5rem;line-height:1.2}
+  .security__banner-title{font-size:1.25rem}
+  .security__banner-text{font-size:1.0625rem;line-height:1.6}
+}
+
+/* v18 (founder): below 1280 every section reads eyebrow + heading (+ intro) → illustration → cards → banner.
+   The copy wrapper dissolves so its head and card list become grid items beside the art, then `order` places them.
+   Spacing: the grid gap is replaced by explicit margins (24px phones / 28px from 768 around the art); the
+   cards → banner distance keeps its previous value. 1280+ is untouched (the wrapper is a normal box again). */
+@media (max-width:1279.98px){
+  .security__inner{row-gap:0}
+  .security__copy{display:contents}
+  .security__head{order:1}
+  .security__art{order:2;margin:24px 0}
+  .security__list{order:3;margin-top:0}
+  .security__banner{order:4;margin-top:40px}
+}
+@media (min-width:768px) and (max-width:1279.98px){
+  .security__art{margin:28px 0}
+  .security__banner{margin-top:48px}
+}
+
+/* v19 shared mobile slim-banner rule (uses-spec v2 §15, founder t162u): below 768 every closing banner is a compact
+   centered stack: no tile, no divider, 18px 14px pad (16px sides from 390), 22px radius, 10px gap, 15px/1.25 title,
+   13.5px (14px from 390)/1.45 body. 768+ is unchanged. */
+@media (max-width:767.98px){
+  .security__banner{align-items:center;text-align:center;gap:10px;padding:18px 14px;border-radius:22px}
+  .security__banner-ic,.security__banner-rule{display:none}
+  .security__banner-copy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;width:100%;min-width:0}
+  .security__banner-title{font-size:.9375rem;line-height:1.25;letter-spacing:0}
+  .security__banner-text{margin:0;width:100%;font-size:.84375rem;line-height:1.45;text-align:center}
+  .security__banner-btn{margin-top:2px;padding:0 18px 0 20px;font-size:.875rem}
+}
+@media (min-width:390px) and (max-width:767.98px){
+  .security__banner{padding:18px 16px}
+  .security__banner-text{font-size:.875rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .security__panel{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .security__banner{-webkit-backdrop-filter:none;backdrop-filter:none}
+}
